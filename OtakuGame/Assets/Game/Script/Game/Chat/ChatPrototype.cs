@@ -1,5 +1,6 @@
 using UnityEngine;
 using com;
+using System.Collections.Generic;
 
 [CreateAssetMenu]
 public class ChatPrototype : ScriptableObject
@@ -8,7 +9,6 @@ public class ChatPrototype : ScriptableObject
     public bool isRight;
     public string soundName;
     public ChatPrototype next;
-
     public enum ChatSprite
     {
         Kabi,
@@ -20,8 +20,11 @@ public class ChatPrototype : ScriptableObject
     public enum ChatSpecialAction
     {
         None,
+
     }
     public ChatSprite chatSprite;
+
+    public List<ChatButtonData> chatButtonDatas;
 
     public Sprite sprite
     {
@@ -34,5 +37,18 @@ public class ChatPrototype : ScriptableObject
             }
             return null;
         }
+    }
+
+    [System.Serializable]
+    public class ChatButtonData
+    {
+        public string buttonText;
+        public enum ButtonActionType
+        {
+            None,
+            ÉÕÊ÷,
+        }
+
+        public ButtonActionType buttonActionType;
     }
 }
