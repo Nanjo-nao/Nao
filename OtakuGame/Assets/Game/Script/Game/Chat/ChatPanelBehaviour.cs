@@ -24,7 +24,8 @@ public class ChatPanelBehaviour : MonoBehaviour
     private Action _btn2Cb;
     private Action _btn3Cb;
 
-    private bool _hasBtnShownNow;
+    public bool hasBtnShowing { get; private set; }
+
     private ChatPrototype _chatPrototype;
     private void Awake()
     {
@@ -47,7 +48,7 @@ public class ChatPanelBehaviour : MonoBehaviour
 
     void ResetButtons()
     {
-        _hasBtnShownNow = false;
+        hasBtnShowing = false;
 
         btn1.SetActive(false);
         btn2.SetActive(false);
@@ -100,40 +101,38 @@ public class ChatPanelBehaviour : MonoBehaviour
 
     public void UserTapped()
     {
-        Debug.Log("UserTapped");
-        Debug.Log("TODO when has btn skip????");
         if (_textAnimation.Finished)
         {
-            Debug.Log("OnChatEnd");
-            ChatService.instance.OnChatEnd();
+            if (!hasBtnShowing)
+            {
+                ChatService.instance.OnChatEnd();
+            }
             return;
         }
 
         _textAnimation.Skip();
-        Debug.Log("Skip");
     }
 
-    public bool TryShowButtons()
+    public void TryShowButtons()
     {
-        if (!_hasBtnShownNow && _chatPrototype.chatButtonDatas != null && _chatPrototype.chatButtonDatas.Count > 0)
+        ResetButtons();
+        if (_chatPrototype != null && _chatPrototype.chatButtonDatas != null && _chatPrototype.chatButtonDatas.Count > 0)
         {
             ShowButtons();
-            return true;
         }
-
-        return false;
     }
 
     void ShowButtons()
     {
-        _hasBtnShownNow = true;
+        hasBtnShowing = true;
 
+        var datas = _chatPrototype.chatButtonDatas;
         ChatPrototype.ChatButtonData data;
-        if (_chatPrototype.chatButtonDatas.Count > 0)
+        if (datas.Count > 0)
         {
-            _hasBtnShownNow = true;
+            hasBtnShowing = true;
 
-            data = _chatPrototype.chatButtonDatas[0];
+            data = datas[0];
             if (data != null)
             {
                 btn1Txt.text = data.buttonText;
@@ -142,9 +141,9 @@ public class ChatPanelBehaviour : MonoBehaviour
             }
         }
 
-        if (_chatPrototype.chatButtonDatas.Count > 1)
+        if (datas.Count > 1)
         {
-            data = _chatPrototype.chatButtonDatas[1];
+            data = datas[1];
             if (data != null)
             {
                 btn2Txt.text = data.buttonText;
@@ -153,9 +152,9 @@ public class ChatPanelBehaviour : MonoBehaviour
             }
         }
 
-        if (_chatPrototype.chatButtonDatas.Count > 2)
+        if (datas.Count > 2)
         {
-            data = _chatPrototype.chatButtonDatas[2];
+            data = datas[2];
             if (data != null)
             {
                 btn3Txt.text = data.buttonText;

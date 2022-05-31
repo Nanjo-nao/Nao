@@ -20,11 +20,6 @@ public class ChatService : MonoBehaviour
 
     public void EndChat()
     {
-        if (ChatPanelBehaviour.instance.TryShowButtons())
-        {
-            return;
-        }
-
         PauseService.instance.Resume();
 
         ChatPanelBehaviour.instance.Hide();
