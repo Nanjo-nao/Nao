@@ -52,7 +52,7 @@ public class ChatService : MonoBehaviour
         switch (type)
         {
             case ChatPrototype.ChatButtonData.ButtonActionType.None:
-                break;
+                return () => { Debug.Log("None!!"); };
 
             case ChatPrototype.ChatButtonData.ButtonActionType.ÉÕÊ÷:
                 return () => { Debug.Log("ÉÕÊ÷!!"); };

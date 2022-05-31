@@ -43,17 +43,20 @@ public class ChatPanelBehaviour : MonoBehaviour
         cg.blocksRaycasts = false;
         _text.SetText("");
 
-        ResetButtons();
+        HideButtons();
     }
 
-    void ResetButtons()
+    void HideButtons()
     {
         hasBtnShowing = false;
 
         btn1.SetActive(false);
         btn2.SetActive(false);
         btn3.SetActive(false);
+    }
 
+    void ClearBtnCb()
+    {
         _btn1Cb = null;
         _btn2Cb = null;
         _btn3Cb = null;
@@ -96,7 +99,8 @@ public class ChatPanelBehaviour : MonoBehaviour
             }
         }
 
-        ResetButtons();
+        HideButtons();
+        ClearBtnCb();
     }
 
     public void UserTapped()
@@ -115,7 +119,7 @@ public class ChatPanelBehaviour : MonoBehaviour
 
     public void TryShowButtons()
     {
-        ResetButtons();
+        HideButtons();
         if (_chatPrototype != null && _chatPrototype.chatButtonDatas != null && _chatPrototype.chatButtonDatas.Count > 0)
         {
             ShowButtons();
@@ -168,7 +172,7 @@ public class ChatPanelBehaviour : MonoBehaviour
     {
         ChatService.instance.OnChatEnd();
         SoundService.instance.Play("btn");
-
+        Debug.Log("OnClickBtn1!!");
         _btn1Cb?.Invoke();
     }
 
@@ -176,7 +180,7 @@ public class ChatPanelBehaviour : MonoBehaviour
     {
         ChatService.instance.OnChatEnd();
         SoundService.instance.Play("btn");
-
+        Debug.Log("OnClickBtn2!!");
         _btn2Cb?.Invoke();
     }
 
@@ -184,7 +188,7 @@ public class ChatPanelBehaviour : MonoBehaviour
     {
         ChatService.instance.OnChatEnd();
         SoundService.instance.Play("btn");
-
+        Debug.Log("OnClickBtn3!!");
         _btn3Cb?.Invoke();
     }
 }

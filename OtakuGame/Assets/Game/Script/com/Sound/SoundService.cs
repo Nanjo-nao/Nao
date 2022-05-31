@@ -63,7 +63,7 @@ namespace com
 
             if (!_siDic.ContainsKey(soundName))
             {
-                Debug.LogError("!ContainsKey " + soundName);
+                Debug.LogWarning("!ContainsKey " + soundName);
                 return;
             }
 

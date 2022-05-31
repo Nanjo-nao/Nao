@@ -10,21 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a191403bcc9d718439c9be1ebc931a87, type: 3}
-  m_Name: chat-test-1-1
+  m_Name: chat-test-single-1
   m_EditorClassIdentifier: 
-  content: Hello my name is snorlax!!Hello my name is snorlax!!Hello my name is snorlax!!
+  content: where are you now
   isRight: 0
   soundName: 
-  next: {fileID: 0}
+  next: {fileID: 11400000, guid: 0c3d5e7f2066a8b47a48b2f089ab3122, type: 2}
   chatSpecialAction: 0
   chatSprite: 0
-  chatButtonDatas:
-  - buttonText: none
-    paramChat: {fileID: 0}
-    buttonActionType: 0
-  - buttonText: shaoshu
-    paramChat: {fileID: 0}
-    buttonActionType: 1
-  - buttonText: other chat
-    paramChat: {fileID: 11400000, guid: 8f3ded5b92c019744b7d95cbefed8524, type: 2}
-    buttonActionType: 2
+  chatButtonDatas: []
