@@ -46,4 +46,15 @@ public class ChatService : MonoBehaviour
 
         ShowChat(_chat.next);
     }
+
+    public System.Action GetActionByButtonActionType(ChatPrototype.ChatButtonData.ButtonActionType type)
+    {
+        switch (type)
+        {
+            case ChatPrototype.ChatButtonData.ButtonActionType.None:
+                break;
+        }
+
+        return null;
+    }
 }

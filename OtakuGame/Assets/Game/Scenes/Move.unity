@@ -7663,7 +7663,7 @@ GameObject:
   - component: {fileID: 1210958566}
   - component: {fileID: 1210958568}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: btns
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8049,7 +8049,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1384951712}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2126727711}
+        m_TargetAssemblyTypeName: ChatPanelBehaviour, Assembly-CSharp
+        m_MethodName: OnClickBtn2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1384951712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8949,7 +8961,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1964627500}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2126727711}
+        m_TargetAssemblyTypeName: ChatPanelBehaviour, Assembly-CSharp
+        m_MethodName: OnClickBtn3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1964627500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9070,7 +9094,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2023733124}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2126727711}
+        m_TargetAssemblyTypeName: ChatPanelBehaviour, Assembly-CSharp
+        m_MethodName: OnClickBtn1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2023733124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9375,6 +9411,12 @@ MonoBehaviour:
   right: {fileID: 1571650058}
   left: {fileID: 2080753317}
   cg: {fileID: 2126727712}
+  btn1: {fileID: 2023733121}
+  btn2: {fileID: 1384951709}
+  btn3: {fileID: 1964627497}
+  btn1Txt: {fileID: 1618831677}
+  btn2Txt: {fileID: 358049702}
+  btn3Txt: {fileID: 1811725927}
 --- !u!225 &2126727712
 CanvasGroup:
   m_ObjectHideFlags: 0

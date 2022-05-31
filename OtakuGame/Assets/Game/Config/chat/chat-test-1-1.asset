@@ -19,9 +19,9 @@ MonoBehaviour:
   chatSpecialAction: 0
   chatSprite: 0
   chatButtonDatas:
-  - buttonText: shaoshu
+  - buttonText: none
     buttonActionType: 0
-  - buttonText: shaoshu
+  - buttonText: shaoshu1
     buttonActionType: 1
-  - buttonText: shaoshu
+  - buttonText: shaoshu2
     buttonActionType: 1
