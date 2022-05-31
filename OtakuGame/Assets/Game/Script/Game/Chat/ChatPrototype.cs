@@ -47,8 +47,10 @@ public class ChatPrototype : ScriptableObject
         {
             None,
             ÉÕÊ÷,
+            Chat,
         }
 
+        public ChatPrototype paramChat;
         public ButtonActionType buttonActionType;
     }
 }

@@ -24,6 +24,8 @@ public class ChatPanelBehaviour : MonoBehaviour
     private Action _btn2Cb;
     private Action _btn3Cb;
 
+    private bool _hasBtnShownNow;
+    private ChatPrototype _chatPrototype;
     private void Awake()
     {
         instance = this;
@@ -45,6 +47,8 @@ public class ChatPanelBehaviour : MonoBehaviour
 
     void ResetButtons()
     {
+        _hasBtnShownNow = false;
+
         btn1.SetActive(false);
         btn2.SetActive(false);
         btn3.SetActive(false);
@@ -56,6 +60,8 @@ public class ChatPanelBehaviour : MonoBehaviour
 
     public void Show(ChatPrototype chat)
     {
+        _chatPrototype = chat;
+
         string sound = chat.soundName;
         if (string.IsNullOrEmpty(sound))
         {
@@ -90,67 +96,96 @@ public class ChatPanelBehaviour : MonoBehaviour
         }
 
         ResetButtons();
-        if (chat.chatButtonDatas != null)
-        {
-            ChatPrototype.ChatButtonData data;
-            if (chat.chatButtonDatas.Count > 0)
-            {
-                data = chat.chatButtonDatas[0];
-                if (data != null)
-                {
-                    btn1Txt.text = data.buttonText;
-                    btn1.SetActive(true);
-                    _btn1Cb = ChatService.instance.GetActionByButtonActionType(data.buttonActionType);
-                }
-            }
-
-            if (chat.chatButtonDatas.Count > 1)
-            {
-                data = chat.chatButtonDatas[1];
-                if (data != null)
-                {
-                    btn2Txt.text = data.buttonText;
-                    btn2.SetActive(true);
-                    _btn2Cb = ChatService.instance.GetActionByButtonActionType(data.buttonActionType);
-                }
-            }
-
-            if (chat.chatButtonDatas.Count > 2)
-            {
-                data = chat.chatButtonDatas[2];
-                if (data != null)
-                {
-                    btn3Txt.text = data.buttonText;
-                    btn3.SetActive(true);
-                    _btn3Cb = ChatService.instance.GetActionByButtonActionType(data.buttonActionType);
-                }
-            }
-        }
     }
 
     public void UserTapped()
     {
+        Debug.Log("UserTapped");
+        Debug.Log("TODO when has btn skip????");
         if (_textAnimation.Finished)
         {
+            Debug.Log("OnChatEnd");
             ChatService.instance.OnChatEnd();
+            return;
+        }
+
+        _textAnimation.Skip();
+        Debug.Log("Skip");
+    }
+
+    public bool TryShowButtons()
+    {
+        if (!_hasBtnShownNow && _chatPrototype.chatButtonDatas != null && _chatPrototype.chatButtonDatas.Count > 0)
+        {
+            ShowButtons();
+            return true;
+        }
+
+        return false;
+    }
+
+    void ShowButtons()
+    {
+        _hasBtnShownNow = true;
+
+        ChatPrototype.ChatButtonData data;
+        if (_chatPrototype.chatButtonDatas.Count > 0)
+        {
+            _hasBtnShownNow = true;
+
+            data = _chatPrototype.chatButtonDatas[0];
+            if (data != null)
+            {
+                btn1Txt.text = data.buttonText;
+                btn1.SetActive(true);
+                _btn1Cb = ChatService.instance.GetActionByButtonActionType(data.buttonActionType, data.paramChat);
+            }
+        }
+
+        if (_chatPrototype.chatButtonDatas.Count > 1)
+        {
+            data = _chatPrototype.chatButtonDatas[1];
+            if (data != null)
+            {
+                btn2Txt.text = data.buttonText;
+                btn2.SetActive(true);
+                _btn2Cb = ChatService.instance.GetActionByButtonActionType(data.buttonActionType, data.paramChat);
+            }
+        }
+
+        if (_chatPrototype.chatButtonDatas.Count > 2)
+        {
+            data = _chatPrototype.chatButtonDatas[2];
+            if (data != null)
+            {
+                btn3Txt.text = data.buttonText;
+                btn3.SetActive(true);
+                _btn3Cb = ChatService.instance.GetActionByButtonActionType(data.buttonActionType, data.paramChat);
+            }
         }
     }
 
     public void OnClickBtn1()
     {
-        _btn1Cb?.Invoke();
+        ChatService.instance.OnChatEnd();
         SoundService.instance.Play("btn");
+
+        _btn1Cb?.Invoke();
     }
 
     public void OnClickBtn2()
     {
-        _btn2Cb?.Invoke();
+        ChatService.instance.OnChatEnd();
         SoundService.instance.Play("btn");
+
+        _btn2Cb?.Invoke();
     }
 
     public void OnClickBtn3()
     {
-        _btn3Cb?.Invoke();
+        ChatService.instance.OnChatEnd();
         SoundService.instance.Play("btn");
+
+        _btn3Cb?.Invoke();
     }
 }
