@@ -22,13 +22,13 @@ public class ClickToMove : MonoBehaviour
 
     public void Update()
     {
-        _timer = _timer - Time.deltaTime;
-
-        if (_timer<=0)
-        {
-            GoToDestination();
-            _timer = timeToThink;
-        }
+     //  _timer = _timer - Time.deltaTime;
+     //
+     //  if (_timer<=0)
+     //  {
+     //      GoToDestination();
+     //      _timer = timeToThink;
+     //  }
 
         CheckClick();
     }
@@ -73,6 +73,7 @@ public class ClickToMove : MonoBehaviour
                 if (hit.collider.gameObject.layer == 6)
                 {
                     destination.transform.position = hit.point;
+                    GoToDestination();
                 }
             }
         }

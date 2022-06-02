@@ -56,12 +56,19 @@ public class DialogTextAnimation : MonoBehaviour
         {
             lettersShown += Time.unscaledDeltaTime * characterPerSecond;
         }
+
         if (lettersShown >= maxLettersCount)
         {
-            Finished = true;
-            Arrow.SetActive(true);
+            OnFinished();
         }
 
         _targetTextLabel.maxVisibleCharacters = (int)lettersShown;
+    }
+
+    void OnFinished()
+    {
+        Finished = true;
+        Arrow.SetActive(true);
+        ChatPanelBehaviour.instance.TryShowButtons();
     }
 }

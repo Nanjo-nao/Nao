@@ -10,18 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a191403bcc9d718439c9be1ebc931a87, type: 3}
-  m_Name: chat-test-2-3
+  m_Name: chat-test-btn3-1
   m_EditorClassIdentifier: 
-  content: I am fine
+  content: Hello my name is snorlax! I like to be fat! I am very nice to people~
   isRight: 0
   soundName: 
   next: {fileID: 0}
   chatSpecialAction: 0
   chatSprite: 0
   chatButtonDatas:
-  - buttonText: hello
-    paramChat: {fileID: 11400000, guid: 9ebf25fe1eb2c15459823b0b134ff235, type: 2}
-    buttonActionType: 2
-  - buttonText: big
+  - buttonText: none
+    paramChat: {fileID: 0}
+    buttonActionType: 0
+  - buttonText: shaoshu
+    paramChat: {fileID: 0}
+    buttonActionType: 1
+  - buttonText: other chat
     paramChat: {fileID: 11400000, guid: 8f3ded5b92c019744b7d95cbefed8524, type: 2}
     buttonActionType: 2

@@ -46,4 +46,21 @@ public class ChatService : MonoBehaviour
 
         ShowChat(_chat.next);
     }
+
+    public System.Action GetActionByButtonActionType(ChatPrototype.ChatButtonData.ButtonActionType type, ChatPrototype chatParam)
+    {
+        switch (type)
+        {
+            case ChatPrototype.ChatButtonData.ButtonActionType.None:
+                return () => { Debug.Log("None!!"); };
+
+            case ChatPrototype.ChatButtonData.ButtonActionType.ÉÕÊ÷:
+                return () => { Debug.Log("ÉÕÊ÷!!"); };
+
+            case ChatPrototype.ChatButtonData.ButtonActionType.Chat:
+                return () => { ChatService.instance.ShowChat(chatParam); };
+        }
+
+        return null;
+    }
 }
