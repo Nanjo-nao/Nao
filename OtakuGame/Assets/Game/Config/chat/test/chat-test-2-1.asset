@@ -18,3 +18,4 @@ MonoBehaviour:
   next: {fileID: 11400000, guid: a223fabf61d6ce34888d3dea5b83cac2, type: 2}
   chatSpecialAction: 0
   chatSprite: 0
+  chatButtonDatas: []
