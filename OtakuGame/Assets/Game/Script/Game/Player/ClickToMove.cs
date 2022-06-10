@@ -22,13 +22,13 @@ public class ClickToMove : MonoBehaviour
 
     public void Update()
     {
-     //  _timer = _timer - Time.deltaTime;
-     //
-     //  if (_timer<=0)
-     //  {
-     //      GoToDestination();
-     //      _timer = timeToThink;
-     //  }
+        //  _timer = _timer - Time.deltaTime;
+        //
+        //  if (_timer<=0)
+        //  {
+        //      GoToDestination();
+        //      _timer = timeToThink;
+        //  }
 
         CheckClick();
     }
@@ -63,8 +63,18 @@ public class ClickToMove : MonoBehaviour
 
     void CheckClick()
     {
+        if (Input.GetMouseButtonDown(1))
+        {
+            InventoryService.instance.TryStopDraging();
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
+            if (InventoryBehaviour.instance.isDraging)
+            {
+                return;
+            }
+
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
