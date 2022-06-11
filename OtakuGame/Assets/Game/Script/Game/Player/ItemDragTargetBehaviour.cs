@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ItemDragTargetBehaviour : MonoBehaviour
+public class ClickTargetBehaviour : MonoBehaviour
 {
 
     // Use this for initialization
@@ -14,5 +14,10 @@ public class ItemDragTargetBehaviour : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void OnClicked()
+    {
+        Debug.Log("OnClicked PointerTarget " + gameObject);
     }
 }

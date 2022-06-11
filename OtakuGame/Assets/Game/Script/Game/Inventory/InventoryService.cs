@@ -141,7 +141,7 @@ public class InventoryService : MonoBehaviour
         _dragingSlot = null;
     }
 
-    public ItemDragTargetBehaviour GetItemDragTarget()
+    public ClickTargetBehaviour GetItemDragTarget()
     {
         return null;
     }
