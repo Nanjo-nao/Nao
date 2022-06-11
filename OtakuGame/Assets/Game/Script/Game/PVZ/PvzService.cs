@@ -93,20 +93,28 @@ public class PvzService : MonoBehaviour
 
     public PlantBehaviour Plant(Transform spot, string id)
     {
+        PlantBehaviour res = null;
         if (id == "psht")
         {
             var go = Instantiate(pshtPrefab, spot.position, Quaternion.identity, pvzCharacterTransParent);
             go.SetActive(true);
-            return go.GetComponent<PlantBehaviour>();
+            res = go.GetComponent<PlantBehaviour>();
         }
         else if (id == "fsht")
         {
             var go = Instantiate(pshtPrefab, spot.position, Quaternion.identity, pvzCharacterTransParent);
             go.SetActive(true);
-            return go.GetComponent<PlantBehaviour>();
+            res = go.GetComponent<PlantBehaviour>();
         }
 
-        return null;
+        if (res != null)
+        {
+            InventoryService.instance.RemoveItem(id, 1);
+            InventoryBehaviour.instance.SyncItems(InventoryService.instance.items);
+        }
+
+        InventoryService.instance.StopItemDraging();
+        return res;
     }
 
     public void PreparePvzArena()

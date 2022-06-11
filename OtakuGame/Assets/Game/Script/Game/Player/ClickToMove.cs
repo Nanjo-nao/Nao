@@ -59,7 +59,7 @@ public class ClickToMove : MonoBehaviour
 
         if (_forceStopFlag)
         {
-            meshAgent.Stop();
+            meshAgent.isStopped = true;
         }
     }
 

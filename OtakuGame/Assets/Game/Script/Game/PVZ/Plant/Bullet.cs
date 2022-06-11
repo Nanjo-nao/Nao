@@ -11,7 +11,7 @@ public class Bullet : MonoBehaviour
 
     public float damage;
 
-    public GameObject dieVFX;
+    public GameObject hitVFX;
 
     void Update()
     {
@@ -23,14 +23,16 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider col)
     {
-        if (collision.transform.tag =="Zombie")
+        if (col.transform.tag == "Zombie")
         {
-            var zombie = collision.transform.GetComponent<ZombieBehaviour>();
+            var zombie = col.transform.GetComponent<ZombieBehaviour>();
             zombie.OnAttacked(damage);
 
-            Instantiate(dieVFX, transform.position, Quaternion.identity, transform.parent);
+            var hit = Instantiate(hitVFX, transform.position, Quaternion.identity, transform.parent);
+            hit.SetActive(true);
+            Destroy(hit, 2);
             Destroy(gameObject);
         }
     }

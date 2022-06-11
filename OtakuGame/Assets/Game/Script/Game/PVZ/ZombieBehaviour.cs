@@ -13,23 +13,26 @@ public class ZombieBehaviour : MonoBehaviour
     public float attackRate = 1;
     private float _attackTimer;
 
+    public GameObject dieVFX;
+    private PlantBehaviour _currentPlant;
+
     void Start()
     {
         _hp = hpMax;
         _attackTimer = 0;
+        _currentPlant = null;
     }
 
     // Update is called once per frame
     void Update()
     {
-        var plant = GetCurrentSpotPlant();
-        if (plant == null)
+        if (_currentPlant == null)
         {
             Move();
         }
         else
         {
-            Attack(plant);
+            Attack(_currentPlant);
         }
     }
 
@@ -51,16 +54,23 @@ public class ZombieBehaviour : MonoBehaviour
         _attackTimer -= Time.deltaTime;
     }
 
-    private PlantBehaviour GetCurrentSpotPlant()
-    {
-        return null;
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "ZombieWin")
         {
             PvzService.instance.Loose();
+        }
+        if (other.tag == "Plant")
+        {
+            _currentPlant = other.GetComponent<PlantBehaviour>();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Plant")
+        {
+            _currentPlant = null;
         }
     }
 
@@ -77,5 +87,9 @@ public class ZombieBehaviour : MonoBehaviour
     public void Die()
     {
         Debug.Log("Die");
+        var hit = Instantiate(dieVFX, transform.position, Quaternion.identity, transform.parent);
+        hit.SetActive(true);
+        Destroy(hit, 2);
+        Destroy(gameObject);
     }
 }

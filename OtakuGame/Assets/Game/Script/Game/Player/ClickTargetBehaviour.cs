@@ -13,7 +13,7 @@ public class ClickTargetBehaviour : MonoBehaviour
         //Debug.Log("ClickTarget " + gameObject + " " + id + " isDraging " + InventoryBehaviour.instance.isDraging);
         Debug.Log("ClickTarget " + gameObject + " " + id);
 
-        if (id == "plant" && _plant == null && (data != null && data.id == "psht" || data.id == "fsht"))
+        if (id == "plant" && _plant == null && (data != null && (data.id == "psht" || data.id == "fsht")))
         {
             PlantAPlant(data.id);
         }

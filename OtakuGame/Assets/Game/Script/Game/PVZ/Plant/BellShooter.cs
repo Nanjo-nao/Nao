@@ -6,6 +6,7 @@ public class BellShooter : MonoBehaviour
     public GameObject bullet;
 
     public Transform muzzle;
+    public Animator animator;
 
     [Range(0.25f, 2f)]
     public float attackRate = 1;
@@ -26,11 +27,16 @@ public class BellShooter : MonoBehaviour
     {
         if (_attackTimer <= 0)
         {
-            Fire();
+            animator.SetTrigger("fire");
             _attackTimer = attackRate;
             return;
         }
 
         _attackTimer -= Time.deltaTime;
+    }
+
+    private void Update()
+    {
+        Attack();
     }
 }

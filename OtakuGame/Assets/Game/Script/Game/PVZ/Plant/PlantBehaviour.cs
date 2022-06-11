@@ -30,6 +30,7 @@ public class PlantBehaviour : MonoBehaviour
 
     public void Die()
     {
-        Debug.Log("Die");
+        Debug.Log("plant Die");
+        Destroy(gameObject);
     }
 }
