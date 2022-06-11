@@ -69,12 +69,17 @@ public class InputPanelService : MonoBehaviour, IGameFlow
     public void InputPanelClick(PointerEventData eventData)
     {
         var ct = GetPointerTarget(eventData);
+        var dragging = InventoryBehaviour.instance.isDraging;
         if (ct != null)
         {
             ct.OnClicked();
             return;
         }
 
+        if (dragging)
+        {
+            return;
+        }
         ClickToMove.instance.CheckClick();
     }
 

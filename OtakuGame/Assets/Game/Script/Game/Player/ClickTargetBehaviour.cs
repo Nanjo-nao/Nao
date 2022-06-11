@@ -3,14 +3,8 @@ using System.Collections;
 
 public class ClickTargetBehaviour : MonoBehaviour
 {
+    public string myName;
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
 
@@ -18,6 +12,6 @@ public class ClickTargetBehaviour : MonoBehaviour
 
     public void OnClicked()
     {
-        Debug.Log("OnClicked PointerTarget " + gameObject);
+        Debug.Log("OnClicked PointerTarget " + gameObject + " " + myName + " isDraging " + InventoryBehaviour.instance.isDraging);
     }
 }

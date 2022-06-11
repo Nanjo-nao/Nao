@@ -33,16 +33,10 @@ public class InputPanelBehaviour : UIBehaviour, IEventSystemHandler, IPointerCli
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (Input.GetMouseButtonDown(1))
-        {
-            InventoryService.instance.TryStopDraging();
-        }
-
-        if (InventoryBehaviour.instance.isDraging)
+        if (eventData.button == PointerEventData.InputButton.Right)
         {
             return;
         }
-
         InputPanelService.instance.InputPanelClick(eventData);
     }
 }

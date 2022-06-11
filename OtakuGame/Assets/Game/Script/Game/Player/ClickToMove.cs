@@ -9,6 +9,7 @@ public class ClickToMove : MonoBehaviour
 
     public NavMeshAgent meshAgent;
     public Transform destination;
+    public ParticleSystem destinationPs;
 
     public static ClickToMove instance;
 
@@ -24,6 +25,7 @@ public class ClickToMove : MonoBehaviour
 
     public void Update()
     {
+
     }
 
     public void GoToDestination()
@@ -64,6 +66,7 @@ public class ClickToMove : MonoBehaviour
             if (hit.collider.gameObject.layer == 6)
             {
                 destination.transform.position = hit.point;
+                destinationPs.Play();
                 GoToDestination();
             }
         }

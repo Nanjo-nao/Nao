@@ -18,11 +18,11 @@ public class InventoryBehaviour : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        Hide();
     }
 
     void Start()
     {
-        Hide();
         StopDrag();
     }
 
@@ -31,6 +31,10 @@ public class InventoryBehaviour : MonoBehaviour
         if (isDraging)
         {
             imgDrag.rectTransform.anchoredPosition = Input.mousePosition;
+            if (Input.GetMouseButtonDown(1))
+            {
+                InventoryService.instance.TryStopDraging();
+            }
         }
     }
 
@@ -61,6 +65,7 @@ public class InventoryBehaviour : MonoBehaviour
 
     public void Hide()
     {
+        Debug.Log("--hide");
         cg.DOKill();
         //cg.alpha = 0;
         cg.DOFade(0, 0.6f);
@@ -70,6 +75,7 @@ public class InventoryBehaviour : MonoBehaviour
 
     public void Show()
     {
+        Debug.Log("--Show");
         SyncItems(InventoryService.instance.items);
 
         cg.DOKill();
