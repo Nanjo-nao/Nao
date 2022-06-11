@@ -28,6 +28,10 @@ public class ChatService : MonoBehaviour
         {
             case ChatPrototype.ChatSpecialAction.None:
                 break;
+
+            case ChatPrototype.ChatSpecialAction.StartPvz:
+                PvzService.instance.EnterPvzView();
+                break;
         }
 
         _chat = null;

@@ -20,7 +20,7 @@ public class ChatPrototype : ScriptableObject
     public enum ChatSpecialAction
     {
         None,
-
+        StartPvz,
     }
     public ChatSprite chatSprite;
 

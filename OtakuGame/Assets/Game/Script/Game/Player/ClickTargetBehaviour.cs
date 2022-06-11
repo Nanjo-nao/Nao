@@ -3,15 +3,11 @@ using System.Collections;
 
 public class ClickTargetBehaviour : MonoBehaviour
 {
-    public string myName;
-
-    void Update()
-    {
-
-    }
+    public string id;
+    public bool stillNavHere;
 
     public void OnClicked()
     {
-        Debug.Log("OnClicked PointerTarget " + gameObject + " " + myName + " isDraging " + InventoryBehaviour.instance.isDraging);
+        Debug.Log("ClickTarget " + gameObject + " " + id + " isDraging " + InventoryBehaviour.instance.isDraging);
     }
 }

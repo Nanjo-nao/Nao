@@ -73,7 +73,10 @@ public class InputPanelService : MonoBehaviour, IGameFlow
         if (ct != null)
         {
             ct.OnClicked();
-            return;
+            if (!ct.stillNavHere)
+            {
+                return;
+            }
         }
 
         if (dragging)

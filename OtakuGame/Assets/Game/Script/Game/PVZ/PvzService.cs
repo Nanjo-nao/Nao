@@ -52,12 +52,12 @@ public class PvzService : MonoBehaviour
 
     void Loose()
     {
-
+        Debug.Log("Loose");
     }
 
     void Win()
     {
-
+        Debug.Log("win");
     }
 
     public void ExitPvzView()
