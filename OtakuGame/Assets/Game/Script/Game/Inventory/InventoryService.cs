@@ -22,8 +22,7 @@ public class InventoryService : MonoBehaviour
     void Test()
     {
         AddItem("coin", 2);
-        AddItem("fsht", 1);
-        AddItem("psht", 3);
+       
         AddItem("flute", 2);
         RemoveItem("flute", 1);
 
@@ -79,7 +78,7 @@ public class InventoryService : MonoBehaviour
             if (i.id == id)
             {
                 i.n -= n;
-                if (i.n == 0)
+                if (i.n <= 0)
                 {
                     items.Remove(i);
                 }
