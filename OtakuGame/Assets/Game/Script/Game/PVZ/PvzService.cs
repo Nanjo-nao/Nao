@@ -91,6 +91,24 @@ public class PvzService : MonoBehaviour
         }
     }
 
+    public PlantBehaviour Plant(Transform spot, string id)
+    {
+        if (id == "psht")
+        {
+            var go = Instantiate(pshtPrefab, spot.position, Quaternion.identity, pvzCharacterTransParent);
+            go.SetActive(true);
+            return go.GetComponent<PlantBehaviour>();
+        }
+        else if (id == "fsht")
+        {
+            var go = Instantiate(pshtPrefab, spot.position, Quaternion.identity, pvzCharacterTransParent);
+            go.SetActive(true);
+            return go.GetComponent<PlantBehaviour>();
+        }
+
+        return null;
+    }
+
     public void PreparePvzArena()
     {
         ClearLevel();

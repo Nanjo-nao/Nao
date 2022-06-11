@@ -22,7 +22,7 @@ public class InventoryService : MonoBehaviour
     void Test()
     {
         AddItem("coin", 2);
-       
+
         AddItem("flute", 2);
         RemoveItem("flute", 1);
 
@@ -101,38 +101,11 @@ public class InventoryService : MonoBehaviour
         slot.ShowRays();
     }
 
-    public void ValidateItemDraging()
-    {
-        var target = GetItemDragTarget();
-        if (target != null)
-        {
-            var targetCanReact = false;
-
-
-            if (targetCanReact)
-            {
-                StopItemDraging();
-                return;
-            }
-        }
-
-        CancelDraging();
-    }
-
-    void CancelDraging()
+    public void CancelDraging()
     {
         StopItemDraging();//TODO smoothly return the item instead of cut
     }
 
-    public void TryStopDraging()
-    {
-        if (!InventoryBehaviour.instance.isDraging)
-        {
-            return;
-        }
-
-        StopItemDraging();
-    }
     public void StopItemDraging()
     {
         InventoryBehaviour.instance.StopDrag();
@@ -140,8 +113,13 @@ public class InventoryService : MonoBehaviour
         _dragingSlot = null;
     }
 
-    public ClickTargetBehaviour GetItemDragTarget()
+    public ItemData GetDragItemData()
     {
-        return null;
+        if (_dragingSlot==null)
+        {
+            return null;
+        }
+
+        return _dragingSlot.data;
     }
 }

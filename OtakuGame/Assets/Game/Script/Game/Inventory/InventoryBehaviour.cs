@@ -33,7 +33,7 @@ public class InventoryBehaviour : MonoBehaviour
             imgDrag.rectTransform.anchoredPosition = Input.mousePosition;
             if (Input.GetMouseButtonDown(1))
             {
-                InventoryService.instance.TryStopDraging();
+                InventoryService.instance.StopItemDraging();
             }
         }
     }
@@ -45,6 +45,7 @@ public class InventoryBehaviour : MonoBehaviour
 
     public void StartDrag()
     {
+        Debug.Log("StartDrag");
         isDraging = true;
         imgDrag.gameObject.SetActive(true);
         foreach (var slot in slots)
@@ -55,6 +56,7 @@ public class InventoryBehaviour : MonoBehaviour
 
     public void StopDrag()
     {
+        Debug.Log("StopDrag");
         isDraging = false;
         imgDrag.gameObject.SetActive(false);
         foreach (var slot in slots)

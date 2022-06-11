@@ -33,10 +33,11 @@ public class InputPanelBehaviour : UIBehaviour, IEventSystemHandler, IPointerCli
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (eventData.button == PointerEventData.InputButton.Right)
+        if (eventData.button != PointerEventData.InputButton.Left)
         {
             return;
         }
+
         InputPanelService.instance.InputPanelClick(eventData);
     }
 }
