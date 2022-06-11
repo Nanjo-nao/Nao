@@ -13,6 +13,8 @@ public class ClickToMove : MonoBehaviour
 
     public static ClickToMove instance;
 
+    private bool _forceStopFlag;
+
     private void Awake()
     {
         instance = this;
@@ -21,11 +23,6 @@ public class ClickToMove : MonoBehaviour
     public void Start()
     {
         _currentBalls = new List<GameObject>();
-    }
-
-    public void Update()
-    {
-
     }
 
     public void GoToDestination()
@@ -56,8 +53,23 @@ public class ClickToMove : MonoBehaviour
         _currentBalls = new List<GameObject>();
     }
 
+    public void ForceStop(bool b)
+    {
+        _forceStopFlag = b;
+
+        if (_forceStopFlag)
+        {
+            meshAgent.Stop();
+        }
+    }
+
     public void CheckClick()
     {
+        if (_forceStopFlag)
+        {
+            return;
+        }
+
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 

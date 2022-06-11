@@ -44,18 +44,13 @@ public class PvzService : MonoBehaviour
         plants = new List<PlantBehaviour>();
     }
 
-
-    void OnZombieEnters()
-    {
-        //loose
-    }
-
-    void Loose()
+    public void Loose()
     {
         Debug.Log("Loose");
+        //OnZombieEnters
     }
 
-    void Win()
+    public void Win()
     {
         Debug.Log("win");
     }
@@ -64,7 +59,7 @@ public class PvzService : MonoBehaviour
     {
         ClearPvzItems();
         mainCamera.enabled = true;
-        move.enabled = true;
+        move.ForceStop(false);
     }
 
     public void EnterPvzView()
@@ -80,7 +75,7 @@ public class PvzService : MonoBehaviour
             InventoryBehaviour.instance.Hide();
             SetPvzItems();
             mainCamera.enabled = false;
-            move.enabled = false;
+            move.ForceStop(true);
         };
 
         CinematicEventPrototype e2 = new CinematicEventPrototype();
