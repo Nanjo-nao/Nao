@@ -15,13 +15,94 @@ public class PvzService : MonoBehaviour
     public List<ZombieBehaviour> zombies = new List<ZombieBehaviour>();
     public List<PlantBehaviour> plants = new List<PlantBehaviour>();
 
+    public List<PvzLevelInfo> levelInfos;
+    public Transform zombieSpawnPos1;
+    public Transform zombieSpawnPos2;
+    public Transform zombieSpawnPos3;
+
+    private int _levelPlayIndex;
+    private bool _runningLevel;
+    private float _levelTimer;
+    public float levelInfoIntervalScale = 3f;
+
+    public GameObject zombiePrefab;
+    public GameObject pshtPrefab;
+    public GameObject fshtPrefab;
+    public Transform pvzCharacterTransParent;
+
     private void Awake()
     {
         instance = this;
     }
 
-    public void InitiatePvzArena()
+    private void Start()
     {
+        ClearLevel();
+    }
+
+    private void Update()
+    {
+        if (_runningLevel)
+        {
+            _levelTimer -= Time.deltaTime;
+            if (_levelTimer <= 0)
+            {
+                TryNextLevelEvent();
+            }
+        }
+    }
+
+    void TryNextLevelEvent()
+    {
+        if (_levelPlayIndex >= levelInfos.Count)
+        {
+            _runningLevel = false;
+            return;
+        }
+
+        var info = levelInfos[_levelPlayIndex];
+        _levelPlayIndex++;
+        PlayLevelInfo(info);
+        _levelTimer = info.timeToNext * levelInfoIntervalScale;
+    }
+
+    void PlayLevelInfo(PvzLevelInfo info)
+    {
+        GameObject go = null;
+
+        if (info.zombieSpot == 1)
+        {
+            go = Instantiate(zombiePrefab, zombieSpawnPos1.position, Quaternion.identity, pvzCharacterTransParent);
+        }
+        else if (info.zombieSpot == 2)
+        {
+
+            go = Instantiate(zombiePrefab, zombieSpawnPos2.position, Quaternion.identity, pvzCharacterTransParent);
+        }
+        else if (info.zombieSpot == 3)
+        {
+
+            go = Instantiate(zombiePrefab, zombieSpawnPos3.position, Quaternion.identity, pvzCharacterTransParent);
+        }
+
+        if (go != null)
+        {
+            go.SetActive(true);
+        }
+    }
+
+    public void PreparePvzArena()
+    {
+        ClearLevel();
+
+        _runningLevel = true;
+    }
+
+    void ClearLevel()
+    {
+        _levelTimer = 0;
+        _levelPlayIndex = 0;
+        _runningLevel = false;
         ClearZombie();
         ClearPlants();
     }
@@ -106,7 +187,7 @@ public class PvzService : MonoBehaviour
         e5.action = () =>
         {
             InventoryBehaviour.instance.Show();
-            InitiatePvzArena();
+            PreparePvzArena();
         };
 
         cinematic.AddEvents(e1);
