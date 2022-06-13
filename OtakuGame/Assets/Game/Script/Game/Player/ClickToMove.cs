@@ -9,35 +9,27 @@ public class ClickToMove : MonoBehaviour
 
     public NavMeshAgent meshAgent;
     public Transform destination;
+    public ParticleSystem destinationPs;
 
-    public float timeToThink = 1;
-    private float _timer;
+    public static ClickToMove instance;
 
+    private bool _forceStopFlag;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     public void Start()
     {
         _currentBalls = new List<GameObject>();
-        _timer = 0;
-    }
-
-    public void Update()
-    {
-     //  _timer = _timer - Time.deltaTime;
-     //
-     //  if (_timer<=0)
-     //  {
-     //      GoToDestination();
-     //      _timer = timeToThink;
-     //  }
-
-        CheckClick();
     }
 
     public void GoToDestination()
     {
-        ClearLastPath();
+        //ClearLastPath();
         meshAgent.SetDestination(destination.position);
-        DrawPath();
+        //DrawPath();
     }
 
     void DrawPath()
@@ -61,20 +53,33 @@ public class ClickToMove : MonoBehaviour
         _currentBalls = new List<GameObject>();
     }
 
-    void CheckClick()
+    public void ForceStop(bool b)
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
+        _forceStopFlag = b;
 
-            if (Physics.Raycast(ray, out hit))
+        if (_forceStopFlag)
+        {
+            meshAgent.isStopped = true;
+        }
+    }
+
+    public void CheckClick()
+    {
+        if (_forceStopFlag)
+        {
+            return;
+        }
+
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit))
+        {
+            if (hit.collider.gameObject.layer == 6)
             {
-                if (hit.collider.gameObject.layer == 6)
-                {
-                    destination.transform.position = hit.point;
-                    GoToDestination();
-                }
+                destination.transform.position = hit.point;
+                destinationPs.Play();
+                GoToDestination();
             }
         }
     }

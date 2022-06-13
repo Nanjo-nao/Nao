@@ -5,7 +5,7 @@ using UnityEngine;
 public class BellAnime : MonoBehaviour
 {
     public BellShooter bellShooter;
-
+    
     public void Fire()
     {
         //Debug.Log("Fire!!!!");
