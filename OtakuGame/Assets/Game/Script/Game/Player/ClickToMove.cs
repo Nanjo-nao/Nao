@@ -29,12 +29,16 @@ public class ClickToMove : MonoBehaviour
 
     private void Update()
     {
-        if (meshAgent.remainingDistance < 0.05f)
+        CheckStopNav();
+    }
+
+    void CheckStopNav()
+    {
+        if (meshAgent.remainingDistance < 0.05f && meshAgent.desiredVelocity.magnitude < 0.15f)
         {
             characterAnimation.StopWalk();
         }
     }
-
     public void GoToDestination()
     {
         //ClearLastPath();
@@ -71,6 +75,7 @@ public class ClickToMove : MonoBehaviour
         if (_forceStopFlag)
         {
             meshAgent.isStopped = true;
+            characterAnimation.StopWalk();
         }
     }
 
