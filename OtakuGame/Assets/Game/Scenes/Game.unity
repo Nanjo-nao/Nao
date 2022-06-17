@@ -1048,6 +1048,7 @@ MonoBehaviour:
   meshAgent: {fileID: 125235790}
   destination: {fileID: 231939121}
   destinationPs: {fileID: 1771713965917861981}
+  characterAnimation: {fileID: 1730251059}
 --- !u!1 &127634601
 GameObject:
   m_ObjectHideFlags: 0
@@ -61949,6 +61950,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1730251059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1730251057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 698d0c555b30fcc43b73c5bf6f3ffc49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1730251058}
 --- !u!1 &1798854252
 GameObject:
   m_ObjectHideFlags: 0

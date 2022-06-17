@@ -155,6 +155,7 @@ public class PvzService : MonoBehaviour
     {
         Debug.Log("Loose");
         //OnZombieEnters
+        move.characterAnimation.StopKnee();
     }
 
     public void Win()
@@ -183,6 +184,7 @@ public class PvzService : MonoBehaviour
             SetPvzItems();
             mainCamera.enabled = false;
             move.ForceStop(true);
+            move.characterAnimation.StartKnee();
         };
 
         CinematicEventPrototype e2 = new CinematicEventPrototype();

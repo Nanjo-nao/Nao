@@ -15,6 +15,8 @@ public class ClickToMove : MonoBehaviour
 
     private bool _forceStopFlag;
 
+    public CharacterAnimationBehaviour characterAnimation;
+
     private void Awake()
     {
         instance = this;
@@ -25,10 +27,19 @@ public class ClickToMove : MonoBehaviour
         _currentBalls = new List<GameObject>();
     }
 
+    private void Update()
+    {
+        if (meshAgent.remainingDistance < 0.05f)
+        {
+            characterAnimation.StopWalk();
+        }
+    }
+
     public void GoToDestination()
     {
         //ClearLastPath();
         meshAgent.SetDestination(destination.position);
+        characterAnimation.StartWalk();
         //DrawPath();
     }
 
