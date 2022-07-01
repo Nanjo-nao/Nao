@@ -8,4 +8,8 @@ public class ChatConfig : ScriptableObject
     public Sprite grt_r;
     public Sprite mln_r;
     public Sprite ezo_r;
+
+    public Sprite snx_r;
+    public Sprite threefg_r;
+    public Sprite hdl_r;
 }

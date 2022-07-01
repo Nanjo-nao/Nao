@@ -18,6 +18,8 @@ public class ChatPrototype : ScriptableObject
         Garrot_L,
         Ezio,
         ZZQ,
+        HDL,
+        ThreeFinger,
     }
 
     public ChatSpecialAction chatSpecialAction;
@@ -67,7 +69,7 @@ public class ChatPrototype : ScriptableObject
                     return cfg.mln_r;
 
                 case Speaker.Kabi:
-                    return null;
+                    return cfg.snx_r;
 
                 case Speaker.Garrot:
                     return cfg.grt_r;
@@ -80,6 +82,12 @@ public class ChatPrototype : ScriptableObject
 
                 case Speaker.ZZQ:
                     return cfg.zzq_l;
+
+                case Speaker.HDL:
+                    return cfg.hdl_r;
+
+                case Speaker.ThreeFinger:
+                    return cfg.threefg_r;
             }
             return null;
         }

@@ -27,6 +27,7 @@ public class ChatPanelBehaviour : MonoBehaviour
     public bool hasBtnShowing { get; private set; }
 
     private ChatPrototype _chatPrototype;
+
     private void Awake()
     {
         instance = this;
