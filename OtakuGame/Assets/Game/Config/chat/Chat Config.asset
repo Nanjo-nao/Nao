@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a47b201042b40e44a8c38a1e25be34e, type: 3}
   m_Name: Chat Config
   m_EditorClassIdentifier: 
-  cat_raw: {fileID: 0}
-  cat_glasses: {fileID: 0}
-  cat_full: {fileID: 0}
-  pangolin_raw: {fileID: 0}
-  pangolin_glasses: {fileID: 0}
-  pangolin_full: {fileID: 0}
+  zzq_l: {fileID: 21300000, guid: ae9aaaddd731fa44694794af0e898f3e, type: 3}
+  grt_l: {fileID: 21300000, guid: 63587462f2dfcb44a9d7ce0fe7451bec, type: 3}
+  grt_r: {fileID: 21300000, guid: 64e772009b9bc28449bc5a32e7808d1a, type: 3}
+  mln_r: {fileID: 21300000, guid: 15f2988efb92d924c898288994d7cbfc, type: 3}
+  ezo_r: {fileID: 21300000, guid: b460eb4b1e8423040addf3738dfc703f, type: 3}
