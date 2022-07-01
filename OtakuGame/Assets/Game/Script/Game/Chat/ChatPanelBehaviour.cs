@@ -169,27 +169,29 @@ public class ChatPanelBehaviour : MonoBehaviour
         }
     }
 
-    public void OnClickBtn1()
+    void ClickBtnFeedback()
     {
         ChatService.instance.OnChatEnd();
         SoundService.instance.Play("btn");
-        Debug.Log("OnClickBtn1!!");
+        Debug.Log("OnClickBtn!!");
+    }
+
+    public void OnClickBtn1()
+    {
+        //ChatService.instance.PerformChatSpecialAction();
+        ClickBtnFeedback();
         _btn1Cb?.Invoke();
     }
 
     public void OnClickBtn2()
     {
-        ChatService.instance.OnChatEnd();
-        SoundService.instance.Play("btn");
-        Debug.Log("OnClickBtn2!!");
+        ClickBtnFeedback();
         _btn2Cb?.Invoke();
     }
 
     public void OnClickBtn3()
     {
-        ChatService.instance.OnChatEnd();
-        SoundService.instance.Play("btn");
-        Debug.Log("OnClickBtn3!!");
+        ClickBtnFeedback();
         _btn3Cb?.Invoke();
     }
 }

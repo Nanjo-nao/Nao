@@ -12,11 +12,11 @@ public class PauseService : MonoBehaviour
 
     public void Pause()
     {
-        Time.timeScale = 0;
+        GameTime.timeScale = 0;
     }
 
     public void Resume()
     {
-        Time.timeScale = 1;
+        GameTime.timeScale = 1;
     }
 }

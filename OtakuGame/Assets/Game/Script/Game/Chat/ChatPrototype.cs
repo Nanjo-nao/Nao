@@ -34,6 +34,7 @@ public class ChatPrototype : ScriptableObject
         StartRace,
         GiveMoneyTo3Finger,
         BurnTree,
+        RemoveObstacle,
     }
     public Speaker speaker;
 

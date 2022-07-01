@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 using System.Collections.Generic;
+using com;
 
 public class ClickToMove : MonoBehaviour
 {
@@ -77,6 +78,11 @@ public class ClickToMove : MonoBehaviour
             meshAgent.isStopped = true;
             characterAnimation.StopWalk();
         }
+    }
+
+    public void Stop()
+    {
+        meshAgent.SetDestination(transform.position);
     }
 
     public void CheckClick()

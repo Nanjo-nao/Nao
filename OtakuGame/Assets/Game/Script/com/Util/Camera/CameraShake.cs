@@ -10,8 +10,8 @@ namespace com
         public float Time = 1;
         private float _timer;
 
-        public static CameraShake Instance;
-        public static CameraShake InstanceStrong;
+        public static CameraShake instance;
+        public static CameraShake instanceStrong;
         public bool isStrongInstance;
 
         void Start()
@@ -19,16 +19,17 @@ namespace com
             _timer = 0;
             if (isStrongInstance)
             {
-                InstanceStrong = this;
+                instanceStrong = this;
             }
             else
             {
-                Instance = this;
+                instance = this;
             }
         }
 
         void Update()
         {
+
             if (_timer > 0)
             {
                 float t = _timer / Time;
