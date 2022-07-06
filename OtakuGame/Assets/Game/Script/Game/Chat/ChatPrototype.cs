@@ -6,34 +6,89 @@ using System.Collections.Generic;
 public class ChatPrototype : ScriptableObject
 {
     public string content;
-    public bool isRight;
     public string soundName;
     public ChatPrototype next;
-    public enum ChatSprite
+
+    public enum Speaker
     {
+        None,
         Kabi,
         Melina,
         Garrot,
+        Garrot_L,
+        Ezio,
+        ZZQ,
+        HDL,
+        ThreeFinger,
     }
+
     public ChatSpecialAction chatSpecialAction;
 
     public enum ChatSpecialAction
     {
         None,
         StartPvz,
+        Shake1,
+        Shake2,
+        Shake3,
+        StartRace,
+        GiveMoneyTo3Finger,
+        BurnTree,
+        RemoveObstacle,
     }
-    public ChatSprite chatSprite;
+    public Speaker speaker;
 
     public List<ChatButtonData> chatButtonDatas;
+
+    public bool isRight
+    {
+        get
+        {
+            switch (speaker)
+            {
+                case Speaker.Garrot_L:
+                    return false;
+
+                case Speaker.ZZQ:
+                    return false;
+            }
+            return true;
+        }
+    }
 
     public Sprite sprite
     {
         get
         {
             var cfg = ConfigService.instance.chatConfig;
-            switch (chatSprite)
+            switch (speaker)
             {
+                case Speaker.None:
+                    return null;
 
+                case Speaker.Melina:
+                    return cfg.mln_r;
+
+                case Speaker.Kabi:
+                    return cfg.snx_r;
+
+                case Speaker.Garrot:
+                    return cfg.grt_r;
+
+                case Speaker.Garrot_L:
+                    return cfg.grt_l;
+
+                case Speaker.Ezio:
+                    return cfg.ezo_r;
+
+                case Speaker.ZZQ:
+                    return cfg.zzq_l;
+
+                case Speaker.HDL:
+                    return cfg.hdl_r;
+
+                case Speaker.ThreeFinger:
+                    return cfg.threefg_r;
             }
             return null;
         }

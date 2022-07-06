@@ -10,20 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a191403bcc9d718439c9be1ebc931a87, type: 3}
-  m_Name: chat-pvz-1
+  m_Name: chat-allpeople-6
   m_EditorClassIdentifier: 
-  content: lets play pvz
+  content: You looser Ezio!
   soundName: 
-  next: {fileID: 11400000, guid: f1a9098a04cb9ac4c94fa8f07f0433cf, type: 2}
+  next: {fileID: 0}
   chatSpecialAction: 0
-  speaker: 0
-  chatButtonDatas:
-  - buttonText: 
-    paramChat: {fileID: 0}
-    buttonActionType: 2
-  - buttonText: 
-    paramChat: {fileID: 0}
-    buttonActionType: 0
-  - buttonText: 
-    paramChat: {fileID: 0}
-    buttonActionType: 0
+  speaker: 4
+  chatButtonDatas: []

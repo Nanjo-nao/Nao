@@ -1,4 +1,5 @@
 using UnityEngine;
+using com;
 
 public class ChatService : MonoBehaviour
 {
@@ -14,16 +15,13 @@ public class ChatService : MonoBehaviour
     public void ShowChat(ChatPrototype chat)
     {
         PauseService.instance.Pause();
+        ClickToMove.instance.Stop();
         _chat = chat;
         ChatPanelBehaviour.instance.Show(_chat);
     }
 
-    public void EndChat()
+    public void PerformChatSpecialAction()
     {
-        PauseService.instance.Resume();
-
-        ChatPanelBehaviour.instance.Hide();
-
         switch (_chat.chatSpecialAction)
         {
             case ChatPrototype.ChatSpecialAction.None:
@@ -32,7 +30,26 @@ public class ChatService : MonoBehaviour
             case ChatPrototype.ChatSpecialAction.StartPvz:
                 PvzService.instance.EnterPvzView();
                 break;
+
+            case ChatPrototype.ChatSpecialAction.Shake1:
+                CameraShake.instance.Shake();
+                break;
+
+            case ChatPrototype.ChatSpecialAction.Shake2:
+                CameraShake.instance.Shake();
+                break;
+
+            case ChatPrototype.ChatSpecialAction.Shake3:
+                CameraShake.instanceStrong.Shake();
+                break;
         }
+    }
+
+    public void EndChat()
+    {
+        PauseService.instance.Resume();
+        PerformChatSpecialAction();
+        ChatPanelBehaviour.instance.Hide();
 
         _chat = null;
     }
@@ -62,7 +79,7 @@ public class ChatService : MonoBehaviour
                 return () => { Debug.Log("ÉÕÊ÷!!"); };
 
             case ChatPrototype.ChatButtonData.ButtonActionType.Chat:
-                return () => { ChatService.instance.ShowChat(chatParam); };
+                return () => { ShowChat(chatParam); };
         }
 
         return null;

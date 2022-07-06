@@ -3,12 +3,13 @@ using UnityEngine;
 [CreateAssetMenu]
 public class ChatConfig : ScriptableObject
 {
-    //public float speedTextShowup;
+    public Sprite zzq_l;
+    public Sprite grt_l;
+    public Sprite grt_r;
+    public Sprite mln_r;
+    public Sprite ezo_r;
 
-    public Sprite cat_raw;
-    public Sprite cat_glasses;
-    public Sprite cat_full;
-    public Sprite pangolin_raw;
-    public Sprite pangolin_glasses;
-    public Sprite pangolin_full;
+    public Sprite snx_r;
+    public Sprite threefg_r;
+    public Sprite hdl_r;
 }
