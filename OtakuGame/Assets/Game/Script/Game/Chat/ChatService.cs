@@ -14,6 +14,12 @@ public class ChatService : MonoBehaviour
 
     public void ShowChat(ChatPrototype chat)
     {
+        if (chat == null)
+        {
+            Debug.LogError("Error! no chat");
+            return;
+        }
+
         PauseService.instance.Pause();
         ClickToMove.instance.Stop();
         _chat = chat;
