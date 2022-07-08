@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: coin
   m_EditorClassIdentifier: 
   id: coin
-  title: coin
-  sp: {fileID: 21300000, guid: bee2045b69976bd4bac52e04a5e4aec6, type: 3}
-  usage: 0
+  title: Flute
+  sp: {fileID: 21300000, guid: de671c7bd70da024c8e0f407ed95e792, type: 3}
+  usage: 3
