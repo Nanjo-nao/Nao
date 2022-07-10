@@ -18,5 +18,5 @@ MonoBehaviour:
   mln_r: {fileID: 21300000, guid: 15f2988efb92d924c898288994d7cbfc, type: 3}
   ezo_r: {fileID: 21300000, guid: b460eb4b1e8423040addf3738dfc703f, type: 3}
   snx_r: {fileID: 0}
-  threefg_r: {fileID: 21300000, guid: 0fb13f261106fe244b287dd1e2f2f3b6, type: 3}
-  hdl_r: {fileID: 21300000, guid: 940314876c809f848b7618f2b2a8d1a0, type: 3}
+  threefg_r: {fileID: 21300000, guid: 654e2c6d088c97c4488393bb78340ff4, type: 3}
+  hdl_r: {fileID: 21300000, guid: e48021ecaaa96ed46a8966b09c0d73db, type: 3}
