@@ -28,6 +28,8 @@ public class ChatService : MonoBehaviour
 
     public void PerformChatSpecialAction()
     {
+        Debug.Log("PerformChatSpecialAction");
+        Debug.Log(_chat.chatSpecialAction);
         switch (_chat.chatSpecialAction)
         {
             case ChatPrototype.ChatSpecialAction.None:
@@ -62,7 +64,6 @@ public class ChatService : MonoBehaviour
     public void EndChat()
     {
         PauseService.instance.Resume();
-        PerformChatSpecialAction();
         ChatPanelBehaviour.instance.Hide();
 
         _chat = null;
@@ -72,6 +73,8 @@ public class ChatService : MonoBehaviour
     {
         if (_chat == null)
             return;
+
+        PerformChatSpecialAction();
 
         if (_chat.next == null)
         {

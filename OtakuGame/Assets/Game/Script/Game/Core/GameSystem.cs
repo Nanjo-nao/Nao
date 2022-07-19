@@ -52,13 +52,13 @@ public class GameSystem : MonoBehaviour
     public void RemoveObstacle()
     {
         kabiObsDisappear.Play();
-        Destroy(kabiObs);
+        Destroy(kabiObs, 0.35f);
     }
 
     public void RemoveKabi()
     {
         kabiDisappear.Play();
-        Destroy(kabi);
+        Destroy(kabi, 0.35f);
     }
 
     void SyncKabiChat()

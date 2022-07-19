@@ -19,7 +19,7 @@ MonoBehaviour:
   speaker: 6
   chatButtonDatas:
   - buttonText: 'Kick it. '
-    paramChat: {fileID: 11400000, guid: 9d272b19847dc60488c2da0e5728fb78, type: 2}
+    paramChat: {fileID: 11400000, guid: f29bce0a76cb06249a73dffefe887ce3, type: 2}
     buttonActionType: 2
   - buttonText: 'leave it alone. '
     paramChat: {fileID: 0}
