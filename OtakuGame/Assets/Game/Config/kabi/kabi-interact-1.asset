@@ -18,9 +18,9 @@ MonoBehaviour:
   chatSpecialAction: 0
   speaker: 6
   chatButtonDatas:
-  - buttonText: 'Pat it slightly. '
-    paramChat: {fileID: 11400000, guid: a60b8738090503245acf38ed1705f4c2, type: 2}
+  - buttonText: Pat it slightly
+    paramChat: {fileID: 11400000, guid: 9d272b19847dc60488c2da0e5728fb78, type: 2}
     buttonActionType: 2
-  - buttonText: 'leave it alone. '
+  - buttonText: Leave it alone
     paramChat: {fileID: 0}
-    buttonActionType: 2
+    buttonActionType: 0

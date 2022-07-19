@@ -19,8 +19,8 @@ MonoBehaviour:
   speaker: 6
   chatButtonDatas:
   - buttonText: 'Slap it. '
-    paramChat: {fileID: 11400000, guid: a60b8738090503245acf38ed1705f4c2, type: 2}
+    paramChat: {fileID: 11400000, guid: 630ac93941b154d4a8cf7f395e713206, type: 2}
     buttonActionType: 2
   - buttonText: 'leave it alone. '
     paramChat: {fileID: 0}
-    buttonActionType: 2
+    buttonActionType: 0

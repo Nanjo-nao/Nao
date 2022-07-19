@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
 using System.Collections.Generic;
-using com;
 
 public class ClickToMove : MonoBehaviour
 {
@@ -40,6 +39,7 @@ public class ClickToMove : MonoBehaviour
             characterAnimation.StopWalk();
         }
     }
+
     public void GoToDestination()
     {
         //ClearLastPath();

@@ -16,7 +16,7 @@ public class InventoryService : MonoBehaviour
     {
         ClearItems();
 
-        Test();
+        //Test();
     }
 
     void Test()
@@ -26,7 +26,6 @@ public class InventoryService : MonoBehaviour
         AddItem("flute", 2);
         RemoveItem("flute", 1);
 
-        Debug.Log(items);
         InventoryBehaviour.instance.Show();
     }
 

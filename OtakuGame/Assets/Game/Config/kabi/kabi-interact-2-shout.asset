@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a191403bcc9d718439c9be1ebc931a87, type: 3}
   m_Name: kabi-interact-2-shout
   m_EditorClassIdentifier: 
-  content: 'roaw!!roaw!! '
+  content: 'Roaw!! Roaw!! '
   soundName: 
-  next: {fileID: 11400000, guid: f29bce0a76cb06249a73dffefe887ce3, type: 2}
+  next: {fileID: 11400000, guid: a60b8738090503245acf38ed1705f4c2, type: 2}
   chatSpecialAction: 3
   speaker: 1
   chatButtonDatas: []

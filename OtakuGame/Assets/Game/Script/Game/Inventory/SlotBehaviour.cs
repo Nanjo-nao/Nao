@@ -19,7 +19,7 @@ public class SlotBehaviour : MonoBehaviour
 
     public void Hide()
     {
-        Debug.Log("Hide");
+        //Debug.Log("Hide");
         data = null;
         gameObject.SetActive(false);
         HideRays();

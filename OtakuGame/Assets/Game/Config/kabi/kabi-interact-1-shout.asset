@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   content: 'roaw! '
   soundName: 
-  next: {fileID: 11400000, guid: 630ac93941b154d4a8cf7f395e713206, type: 2}
+  next: {fileID: 11400000, guid: a60b8738090503245acf38ed1705f4c2, type: 2}
   chatSpecialAction: 2
   speaker: 1
   chatButtonDatas: []

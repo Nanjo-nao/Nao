@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   content: 'It blocks my way! '
   soundName: 
-  next: {fileID: 11400000, guid: eb57bac99f5fd334d89903db5906f9ab, type: 2}
+  next: {fileID: 0}
   chatSpecialAction: 0
   speaker: 6
   chatButtonDatas: []
