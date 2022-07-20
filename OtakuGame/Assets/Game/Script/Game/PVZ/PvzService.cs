@@ -94,6 +94,7 @@ public class PvzService : MonoBehaviour
         {
             go.SetActive(true);
         }
+        zombies.Add(go.GetComponent<ZombieBehaviour>());
     }
 
     public PlantBehaviour Plant(Transform spot, string id)
@@ -117,7 +118,7 @@ public class PvzService : MonoBehaviour
             InventoryService.instance.RemoveItem(id, 1);
             InventoryBehaviour.instance.SyncItems(InventoryService.instance.items);
         }
-
+        plants.Add(res);
         InventoryService.instance.StopItemDraging();
         return res;
     }
@@ -127,6 +128,13 @@ public class PvzService : MonoBehaviour
         ClearLevel();
 
         _runningLevel = true;
+    }
+
+    public void EndPvz()
+    {
+        ClearLevel();
+
+        _runningLevel = false;
     }
 
     void ClearLevel()

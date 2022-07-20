@@ -40,6 +40,7 @@ public class ChatService : MonoBehaviour
                 break;
 
             case ChatPrototype.ChatSpecialAction.RestartPvz:
+                PvzService.instance.EndPvz();
                 PvzService.instance.EnterPvzView();
                 break;
 

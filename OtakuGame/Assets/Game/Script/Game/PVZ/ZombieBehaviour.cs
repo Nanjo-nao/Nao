@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class ZombieBehaviour : MonoBehaviour
 {
@@ -61,7 +60,7 @@ public class ZombieBehaviour : MonoBehaviour
     private void Move()
     {
         if (_reduceSpeedTimer > 0)
-        { transform.position -= 0.25f * speed * Vector3.right * Time.deltaTime; }
+        { transform.position -= 0.15f * speed * Vector3.right * Time.deltaTime; }
         else
         {
             transform.position -= speed * Vector3.right * Time.deltaTime;
