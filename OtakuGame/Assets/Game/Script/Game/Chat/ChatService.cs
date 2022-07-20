@@ -45,7 +45,7 @@ public class ChatService : MonoBehaviour
                 break;
 
             case ChatPrototype.ChatSpecialAction.EndPvz:
-                PvzService.instance.PreparePvzArena();
+                PvzService.instance.EndPvz();
                 PvzService.instance.ExitPvzView();
                 break;
 
