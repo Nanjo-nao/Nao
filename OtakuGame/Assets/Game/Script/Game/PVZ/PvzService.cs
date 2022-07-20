@@ -161,13 +161,13 @@ public class PvzService : MonoBehaviour
         Debug.Log("Loose");
         //OnZombieEnters
         move.characterAnimation.Unhappy();
-        ChatService.instance.ShowChat(chatStart);
+        ChatService.instance.ShowChat(chatLoose);
     }
 
     public void Win()
     {
         Debug.Log("win");
-        ChatService.instance.ShowChat(chatStart);
+        ChatService.instance.ShowChat(chatWin);
     }
 
     public void ExitPvzView()

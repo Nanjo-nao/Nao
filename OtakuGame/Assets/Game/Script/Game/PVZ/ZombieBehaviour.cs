@@ -39,7 +39,7 @@ public class ZombieBehaviour : MonoBehaviour
             _reduceSpeedTimer -= Time.deltaTime;
             if (_reduceSpeedTimer <= 0)
             {
-                SetMat(false);
+                SetMat(true);
             }
         }
         if (_hp <= 0)
@@ -61,7 +61,7 @@ public class ZombieBehaviour : MonoBehaviour
     private void Move()
     {
         if (_reduceSpeedTimer > 0)
-        { transform.position -= 0.4f * speed * Vector3.right * Time.deltaTime; }
+        { transform.position -= 0.25f * speed * Vector3.right * Time.deltaTime; }
         else
         {
             transform.position -= speed * Vector3.right * Time.deltaTime;
@@ -102,6 +102,9 @@ public class ZombieBehaviour : MonoBehaviour
 
     public void OnAttacked(float dmg, bool reduceSpeed)
     {
+        if (_hp <= 0)
+            return;
+
         _hp -= dmg;
         Debug.Log("OnAttacked " + _hp + "/" + hpMax);
         if (_hp <= 0)
@@ -123,7 +126,7 @@ public class ZombieBehaviour : MonoBehaviour
         hit.SetActive(true);
         animator.SetTrigger("die");
         Destroy(hit, 2);
-        Destroy(gameObject, 3);
+        Destroy(gameObject, 5);
         col.enabled = false;
     }
 
