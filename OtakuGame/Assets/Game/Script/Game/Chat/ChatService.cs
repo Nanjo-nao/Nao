@@ -39,6 +39,15 @@ public class ChatService : MonoBehaviour
                 PvzService.instance.EnterPvzView();
                 break;
 
+            case ChatPrototype.ChatSpecialAction.RestartPvz:
+                PvzService.instance.EnterPvzView();
+                break;
+
+            case ChatPrototype.ChatSpecialAction.EndPvz:
+                PvzService.instance.PreparePvzArena();
+                PvzService.instance.ExitPvzView();
+                break;
+
             case ChatPrototype.ChatSpecialAction.Shake1:
                 CameraShake.instance.Shake();
                 GameSystem.instance.SetKabiStep2();

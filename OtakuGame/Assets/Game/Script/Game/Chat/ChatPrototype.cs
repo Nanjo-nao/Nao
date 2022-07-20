@@ -35,6 +35,8 @@ public class ChatPrototype : ScriptableObject
         GiveMoneyTo3Finger,
         BurnTree,
         RemoveObstacle,
+        RestartPvz,
+        EndPvz,
     }
     public Speaker speaker;
 

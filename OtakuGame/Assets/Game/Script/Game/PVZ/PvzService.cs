@@ -31,6 +31,10 @@ public class PvzService : MonoBehaviour
     public GameObject fshtPrefab;
     public Transform pvzCharacterTransParent;
 
+    public ChatPrototype chatStart;
+    public ChatPrototype chatWin;
+    public ChatPrototype chatLoose;
+
     private void Awake()
     {
         instance = this;
@@ -156,12 +160,14 @@ public class PvzService : MonoBehaviour
     {
         Debug.Log("Loose");
         //OnZombieEnters
-        move.characterAnimation.StopKnee();
+        move.characterAnimation.Unhappy();
+        ChatService.instance.ShowChat(chatStart);
     }
 
     public void Win()
     {
         Debug.Log("win");
+        ChatService.instance.ShowChat(chatStart);
     }
 
     public void ExitPvzView()
@@ -185,7 +191,7 @@ public class PvzService : MonoBehaviour
             SetPvzItems();
             mainCamera.enabled = false;
             move.ForceStop(true);
-            move.characterAnimation.StartKnee();
+            move.characterAnimation.Happy();
         };
 
         CinematicEventPrototype e2 = new CinematicEventPrototype();
@@ -223,6 +229,7 @@ public class PvzService : MonoBehaviour
         {
             InventoryBehaviour.instance.Show();
             PreparePvzArena();
+            ChatService.instance.ShowChat(chatStart);
         };
 
         cinematic.AddEvents(e1);
