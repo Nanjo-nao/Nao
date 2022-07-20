@@ -51,22 +51,28 @@ public class ChatService : MonoBehaviour
 
             case ChatPrototype.ChatSpecialAction.Shake1:
                 CameraShake.instance.Shake();
-                GameSystem.instance.SetKabiStep2();
                 break;
 
             case ChatPrototype.ChatSpecialAction.Shake2:
                 CameraShake.instance.Shake();
-                GameSystem.instance.SetKabiStep3();
                 break;
 
             case ChatPrototype.ChatSpecialAction.Shake3:
                 CameraShake.instanceStrong.Shake();
-                GameSystem.instance.SetKabiStep4();
                 break;
 
             case ChatPrototype.ChatSpecialAction.RemoveObstacle:
                 CameraShake.instanceStrong.Shake();
+                GameSystem.instance.SetKabiStep4();
                 GameSystem.instance.RemoveObstacle();
+                break;
+
+            case ChatPrototype.ChatSpecialAction.Kabi2:
+                GameSystem.instance.SetKabiStep2();
+                break;
+
+            case ChatPrototype.ChatSpecialAction.Kabi3:
+                GameSystem.instance.SetKabiStep3();
                 break;
         }
     }

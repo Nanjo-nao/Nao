@@ -179,7 +179,10 @@ public class PvzService : MonoBehaviour
     {
         foreach (var i in plants)
         {
-            GameObject.Destroy(i.gameObject);
+            if (i!=null)
+            {
+                Destroy(i.gameObject);
+            }
         }
         plants = new List<PlantBehaviour>();
     }
@@ -224,21 +227,21 @@ public class PvzService : MonoBehaviour
         };
 
         CinematicEventPrototype e2 = new CinematicEventPrototype();
-        e2.TimeToNext = 1.5f;
+        e2.TimeToNext = 1.8f;
         e2.trans = transParam1;
-        e2.duration = 1.5f;
+        e2.duration = 1.8f;
         e2.ease = DG.Tweening.Ease.OutCubic;
         e2.type = CinematicActionTypes.TweenPositionAndRotation;
 
         CinematicEventPrototype e3 = new CinematicEventPrototype();
-        e3.TimeToNext = 4f;
+        e3.TimeToNext = 3.5f;
         e3.duration = 2f;
         e3.ease = DG.Tweening.Ease.InOutCubic;
         e3.type = CinematicActionTypes.TweenPositionAndRotation;
         e3.trans = transParam2;
 
         CinematicEventPrototype e4 = new CinematicEventPrototype();
-        e4.TimeToNext = 3.0f;
+        e4.TimeToNext = 2.5f;
         e4.trans = transParam3;
         e4.duration = 2.0f;
         e4.type = CinematicActionTypes.TweenPositionAndRotation;

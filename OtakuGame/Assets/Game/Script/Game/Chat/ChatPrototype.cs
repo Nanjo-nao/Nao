@@ -37,6 +37,8 @@ public class ChatPrototype : ScriptableObject
         RemoveObstacle,
         RestartPvz,
         EndPvz,
+        Kabi2,
+        Kabi3,
     }
     public Speaker speaker;
 
