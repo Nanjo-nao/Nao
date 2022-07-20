@@ -86,6 +86,11 @@ public class CommonNpcBehaviour : MonoBehaviour
         _isWalking = false;
     }
 
+    public void Happy()
+    {
+        animator.SetTrigger("happy");
+    }
+
     void RotateTo(Vector3 dir)
     {
         transform.rotation = Quaternion.LookRotation(dir);

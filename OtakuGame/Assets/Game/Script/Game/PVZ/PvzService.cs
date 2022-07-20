@@ -205,7 +205,7 @@ public class PvzService : MonoBehaviour
     public void ExitPvzView()
     {
         ClearPvzItems();
-        mainCamera.enabled = true;
+        mainCamera.SetEnable(true);
         move.ForceStop(false);
     }
 
@@ -221,7 +221,7 @@ public class PvzService : MonoBehaviour
         {
             InventoryBehaviour.instance.Hide();
             SetPvzItems();
-            mainCamera.enabled = false;
+            mainCamera.SetEnable(false);
             move.ForceStop(true);
             move.characterAnimation.Happy();
         };

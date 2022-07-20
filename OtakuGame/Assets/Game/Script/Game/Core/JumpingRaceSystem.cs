@@ -7,10 +7,10 @@ public class JumpingRaceSystem : MonoBehaviour
     public static JumpingRaceSystem instance;
     public GameObject block;
 
-    public ChatPrototype chatRace1;
-    public ChatPrototype chatRace2;
-    public ChatPrototype chatRace3;
-    public ChatPrototype chatRaceEnd;
+    public ChatPrototype chatRace1End;
+    public ChatPrototype chatRace2End;
+    public ChatPrototype chatRace3End;
+    public ChatPrototype chatRacesEnd;
 
     public Transform moveToCenter_g;
     public Transform moveToCenter_e;
@@ -85,9 +85,8 @@ public class JumpingRaceSystem : MonoBehaviour
         e1.action = () =>
         {
             InventoryBehaviour.instance.Hide();
-            mainCamera.enabled = false;
+            mainCamera.SetEnable(false);
             move.ForceStop(true);
-            move.characterAnimation.Happy();
         };
 
         CinematicEventPrototype e2 = new CinematicEventPrototype();
@@ -107,11 +106,11 @@ public class JumpingRaceSystem : MonoBehaviour
         };
 
         CinematicEventPrototype e4 = new CinematicEventPrototype();
-        e4.TimeToNext = 3.0f;
+        e4.TimeToNext = 4.0f;
         e4.trans = race.cam_2;
-        e4.duration = 2.5f;
+        e4.duration = 3.0f;
         e4.type = CinematicActionTypes.TweenPositionAndRotation;
-        e4.ease = DG.Tweening.Ease.InCubic;
+        e4.ease = DG.Tweening.Ease.OutCubic;
 
         CinematicEventPrototype e5 = new CinematicEventPrototype();
         e5.TimeToNext = 0f;
@@ -137,12 +136,32 @@ public class JumpingRaceSystem : MonoBehaviour
         e7.ease = DG.Tweening.Ease.InCubic;
 
         CinematicEventPrototype e8 = new CinematicEventPrototype();
-        e8.TimeToNext = 0.5f;
+        e8.TimeToNext = 3.5f;
         e8.type = CinematicActionTypes.CallFunc;
         e8.action = () =>
         {
             ezio.ResetMove();
             geralt.ResetMove();
+            mainCamera.SetEnable(true);
+            ezio.Happy();
+            geralt.transform.position = moveToCenter_g.position;
+            ezio.transform.position = moveToCenter_e.position;
+        };
+
+        CinematicEventPrototype e9 = new CinematicEventPrototype();
+        e9.TimeToNext = 1.5f;
+        e9.type = CinematicActionTypes.CallFunc;
+        e9.action = () =>
+        {
+            mainCamera.SetEnable(true);
+            move.ForceStop(false);
+            ezio.ResetMove();
+            geralt.transform.position = moveToCenter_g.position;
+            ezio.transform.position = moveToCenter_e.position;
+
+            InventoryBehaviour.instance.Show();
+            InventoryService.instance.AddItem("coin", 1);
+            ChatService.instance.ShowChat(chatRace1End);
         };
 
         cinematic.AddEvents(e1);
@@ -153,6 +172,7 @@ public class JumpingRaceSystem : MonoBehaviour
         cinematic.AddEvents(e6);
         cinematic.AddEvents(e7);
         cinematic.AddEvents(e8);
+        cinematic.AddEvents(e9);
         cinematic.StartService();
     }
 
@@ -168,6 +188,6 @@ public class JumpingRaceSystem : MonoBehaviour
     void EndAllRaces()
     {
         block.SetActive(false);
-        ChatService.instance.ShowChat(chatRaceEnd);
+        ChatService.instance.ShowChat(chatRacesEnd);
     }
 }

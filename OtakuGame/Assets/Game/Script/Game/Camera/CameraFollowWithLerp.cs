@@ -10,10 +10,12 @@ public class CameraFollowWithLerp : MonoBehaviour
     public float duration = 2.5f;
     public float startOffsetRatio = 0.2f;
     public Transform fastpass;
+    Quaternion _startRot;
 
     void Start()
     {
         _offset = transform.position - player.position;
+        _startRot = transform.rotation;
 
         _endStartTween = false;
         move.enabled = false;
@@ -49,5 +51,15 @@ public class CameraFollowWithLerp : MonoBehaviour
         if (!_endStartTween)
             return;
         transform.position = player.position + _offset;
+    }
+
+    public void SetEnable(bool b)
+    {
+        enabled = b;
+        if (enabled)
+        {
+            transform.rotation = _startRot;
+            transform.position = player.position + _offset;
+        }
     }
 }
