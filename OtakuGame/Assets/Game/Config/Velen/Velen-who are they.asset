@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a191403bcc9d718439c9be1ebc931a87, type: 3}
   m_Name: Velen-who are they
   m_EditorClassIdentifier: 
-  content: Who are these 2 man? Assassin and witch hunter?
+  content: WTF are the 2 men? Assassin and Witch Hunter?
   soundName: 
   next: {fileID: 0}
   chatSpecialAction: 13

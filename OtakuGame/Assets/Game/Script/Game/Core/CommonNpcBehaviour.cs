@@ -4,24 +4,35 @@ public class CommonNpcBehaviour : MonoBehaviour
 {
     public Animator animator;
     public float speed = 4f;
-
-    Vector3 dest;
-    bool isWalking;
+    public float speedFall = 7f;
+    Vector3 _dest;
+    bool _isWalking;
+    bool _isFalling;
+    bool _isFallingSuc;
 
     public void GoTo(Vector3 d)
     {
         animator.SetBool("walk", true);
-        dest = d;
-        isWalking = true;
+        _dest = d;
+        _isWalking = true;
+    }
+
+    public void FallTo(Vector3 d, bool suc)
+    {
+        Arrive();
+        _dest = d;
+        _isFalling = true;
+        _isFallingSuc = suc;
+        animator.SetTrigger("jump");
     }
 
     private void Update()
     {
-        if (isWalking)
+        if (_isWalking)
         {
-            var dir = dest - transform.position;
+            var dir = _dest - transform.position;
             dir.y = 0;
-            if (dir.magnitude < 0.1f)
+            if (dir.magnitude < 0.05f)
             {
                 Arrive();
                 return;
@@ -29,13 +40,50 @@ public class CommonNpcBehaviour : MonoBehaviour
             RotateTo(dir);
             var s = dir.normalized * Time.deltaTime * speed;
             transform.position += s;
+            return;
+        }
+
+        if (_isFalling)
+        {
+            var dir = _dest - transform.position;
+            dir.x = 0;
+            dir.z = 0;
+            if (dir.magnitude < 0.05f)
+            {
+                ArriveFall();
+                return;
+            }
+
+            var s = dir.normalized * Time.deltaTime * speedFall;
+            transform.position += s;
+            return;
         }
     }
 
     void Arrive()
     {
         animator.SetBool("walk", false);
-        isWalking = false;
+        _isWalking = false;
+    }
+
+    void ArriveFall()
+    {
+        if (_isFallingSuc)
+        {
+            animator.SetTrigger("unjump");
+        }
+        else
+        {
+            animator.SetTrigger("die");
+        }
+        _isFalling = false;
+    }
+
+    public void ResetMove()
+    {
+        animator.SetTrigger("reset");
+        _isFalling = false;
+        _isWalking = false;
     }
 
     void RotateTo(Vector3 dir)

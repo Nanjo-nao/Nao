@@ -60,7 +60,7 @@ public class JumpingRaceSystem : MonoBehaviour
 
     public void StartRace()
     {
-        if (_raceIndex==0)
+        if (_raceIndex == 0)
         {
             SetupRace(race1);
         }
@@ -96,7 +96,7 @@ public class JumpingRaceSystem : MonoBehaviour
         e2.type = CinematicActionTypes.SetPositionAndRotation;
 
         CinematicEventPrototype e3 = new CinematicEventPrototype();
-        e2.TimeToNext = 0f;
+        e3.TimeToNext = 0f;
         e3.type = CinematicActionTypes.CallFunc;
         e3.action = () =>
         {
@@ -107,25 +107,59 @@ public class JumpingRaceSystem : MonoBehaviour
         };
 
         CinematicEventPrototype e4 = new CinematicEventPrototype();
-        e4.TimeToNext = 2.5f;
+        e4.TimeToNext = 3.0f;
         e4.trans = race.cam_2;
         e4.duration = 2.5f;
         e4.type = CinematicActionTypes.TweenPositionAndRotation;
-        e4.ease = DG.Tweening.Ease.InOutCubic;
+        e4.ease = DG.Tweening.Ease.InCubic;
 
-       
+        CinematicEventPrototype e5 = new CinematicEventPrototype();
+        e5.TimeToNext = 0f;
+        e5.trans = race.cam_3;
+        e5.type = CinematicActionTypes.SetPositionAndRotation;
+
+        CinematicEventPrototype e6 = new CinematicEventPrototype();
+        e6.TimeToNext = 0f;
+        e6.type = CinematicActionTypes.CallFunc;
+        e6.action = () =>
+        {
+            ezio.transform.position = race.end_e_1.position;
+            geralt.transform.position = race.end_g_1.position;
+            ezio.FallTo(race.end_e_2.position, true);
+            geralt.FallTo(race.end_g_2.position, false);
+        };
+
+        CinematicEventPrototype e7 = new CinematicEventPrototype();
+        e7.TimeToNext = 4.0f;
+        e7.trans = race.cam_4;
+        e7.duration = 3.0f;
+        e7.type = CinematicActionTypes.TweenPositionAndRotation;
+        e7.ease = DG.Tweening.Ease.InCubic;
+
+        CinematicEventPrototype e8 = new CinematicEventPrototype();
+        e8.TimeToNext = 0.5f;
+        e8.type = CinematicActionTypes.CallFunc;
+        e8.action = () =>
+        {
+            ezio.ResetMove();
+            geralt.ResetMove();
+        };
+
         cinematic.AddEvents(e1);
         cinematic.AddEvents(e2);
         cinematic.AddEvents(e3);
         cinematic.AddEvents(e4);
-
+        cinematic.AddEvents(e5);
+        cinematic.AddEvents(e6);
+        cinematic.AddEvents(e7);
+        cinematic.AddEvents(e8);
         cinematic.StartService();
     }
 
     void EndRace()
     {
         _raceIndex++;
-        if (_raceIndex>2)
+        if (_raceIndex > 2)
         {
             EndAllRaces();
         }

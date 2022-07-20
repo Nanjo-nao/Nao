@@ -28,7 +28,7 @@ public class ChatService : MonoBehaviour
 
     public void PerformChatSpecialAction()
     {
-        Debug.Log("PerformChatSpecialAction");
+        //Debug.Log("PerformChatSpecialAction");
         Debug.Log(_chat.chatSpecialAction);
         switch (_chat.chatSpecialAction)
         {
