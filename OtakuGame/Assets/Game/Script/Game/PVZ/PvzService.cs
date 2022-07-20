@@ -103,7 +103,7 @@ public class PvzService : MonoBehaviour
         }
         else if (id == "fsht")
         {
-            var go = Instantiate(pshtPrefab, spot.position, Quaternion.identity, pvzCharacterTransParent);
+            var go = Instantiate(fshtPrefab, spot.position, Quaternion.identity, pvzCharacterTransParent);
             go.SetActive(true);
             res = go.GetComponent<PlantBehaviour>();
         }
@@ -203,16 +203,16 @@ public class PvzService : MonoBehaviour
         e3.trans = transParam2;
 
         CinematicEventPrototype e4 = new CinematicEventPrototype();
-        e4.TimeToNext = 4.0f;
+        e4.TimeToNext = 3.0f;
         e4.trans = transParam3;
         e4.duration = 2.0f;
         e4.type = CinematicActionTypes.TweenPositionAndRotation;
         e4.ease = DG.Tweening.Ease.InOutCubic;
 
         CinematicEventPrototype e5 = new CinematicEventPrototype();
-        e5.TimeToNext = 4.0f;
+        e5.TimeToNext = 3.0f;
         e5.trans = zombieSpawnPosFinal;
-        e5.duration = 4.0f;
+        e5.duration = 3.0f;
         e5.type = CinematicActionTypes.TweenPositionAndRotation;
         e5.ease = DG.Tweening.Ease.InOutCubic;
 

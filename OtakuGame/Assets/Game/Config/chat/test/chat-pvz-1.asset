@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a191403bcc9d718439c9be1ebc931a87, type: 3}
   m_Name: chat-pvz-1
   m_EditorClassIdentifier: 
-  content: Please save us from Parasects!!!
+  content: Please help us! We are plants!
   soundName: 
   next: {fileID: 11400000, guid: f1a9098a04cb9ac4c94fa8f07f0433cf, type: 2}
   chatSpecialAction: 0

@@ -18,6 +18,12 @@ public class ZombieBehaviour : MonoBehaviour
     public Animator animator;
     public Collider col;
 
+    public float reduceSpeedTime;
+    float _reduceSpeedTimer;
+    public Material matNormal;
+    public Material matSlowed;
+    public Renderer r;
+
     void Start()
     {
         _hp = hpMax;
@@ -28,6 +34,14 @@ public class ZombieBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (_reduceSpeedTimer > 0)
+        {
+            _reduceSpeedTimer -= Time.deltaTime;
+            if (_reduceSpeedTimer <= 0)
+            {
+                SetMat(false);
+            }
+        }
         if (_hp <= 0)
         {
             transform.position += Vector3.up * (-0.5f * Time.deltaTime);
@@ -46,9 +60,13 @@ public class ZombieBehaviour : MonoBehaviour
 
     private void Move()
     {
-        transform.position += -Vector3.right * Time.deltaTime;
+        if (_reduceSpeedTimer > 0)
+        { transform.position -= 0.4f * speed * Vector3.right * Time.deltaTime; }
+        else
+        {
+            transform.position -= speed * Vector3.right * Time.deltaTime;
+        }
     }
-
 
     private void Attack(PlantBehaviour plant)
     {
@@ -82,13 +100,19 @@ public class ZombieBehaviour : MonoBehaviour
         }
     }
 
-    public void OnAttacked(float dmg)
+    public void OnAttacked(float dmg, bool reduceSpeed)
     {
         _hp -= dmg;
         Debug.Log("OnAttacked " + _hp + "/" + hpMax);
         if (_hp <= 0)
         {
             Die();
+        }
+
+        if (reduceSpeed)
+        {
+            _reduceSpeedTimer = reduceSpeedTime;
+            SetMat(false);
         }
     }
 
@@ -101,5 +125,17 @@ public class ZombieBehaviour : MonoBehaviour
         Destroy(hit, 2);
         Destroy(gameObject, 3);
         col.enabled = false;
+    }
+
+    public void SetMat(bool normal)
+    {
+        if (normal)
+        {
+            r.material = matNormal;
+        }
+        else
+        {
+            r.material = matSlowed;
+        }
     }
 }

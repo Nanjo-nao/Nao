@@ -11,6 +11,8 @@ public class Bullet : MonoBehaviour
 
     public float damage;
 
+    public bool reduceSpeed;
+
     public GameObject hitVFX;
 
     void Update()
@@ -28,7 +30,7 @@ public class Bullet : MonoBehaviour
         if (col.transform.tag == "Zombie")
         {
             var zombie = col.transform.GetComponent<ZombieBehaviour>();
-            zombie.OnAttacked(damage);
+            zombie.OnAttacked(damage, reduceSpeed);
 
             var hit = Instantiate(hitVFX, transform.position, Quaternion.identity, transform.parent);
             hit.SetActive(true);
