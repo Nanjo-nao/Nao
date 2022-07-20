@@ -21,7 +21,7 @@ public class PlantBehaviour : MonoBehaviour
     public void OnAttacked(float dmg)
     {
         _hp -= dmg;
-        Debug.Log("OnAttacked " + _hp + "/" + hpMax);
+        //Debug.Log("OnAttacked " + _hp + "/" + hpMax);
         if (_hp <= 0)
         {
             Die();

@@ -43,7 +43,7 @@ public class ZombieBehaviour : MonoBehaviour
         }
         if (IsDead())
         {
-            transform.position += Vector3.up * (-0.4f * Time.deltaTime);
+            transform.position += Vector3.up * (-0.5f * Time.deltaTime);
             return;
         }
 
@@ -129,8 +129,8 @@ public class ZombieBehaviour : MonoBehaviour
         var hit = Instantiate(dieVFX, transform.position, Quaternion.identity, transform.parent);
         hit.SetActive(true);
         animator.SetTrigger("die");
-        Destroy(hit, 2);
-        Destroy(gameObject, 5);
+        Destroy(hit, 2f);
+        Destroy(gameObject, 5.5f);
         col.enabled = false;
 
         PvzService.instance.CheckWin();
