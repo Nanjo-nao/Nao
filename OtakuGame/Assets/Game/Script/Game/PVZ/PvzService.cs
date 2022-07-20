@@ -35,6 +35,8 @@ public class PvzService : MonoBehaviour
     public ChatPrototype chatWin;
     public ChatPrototype chatLoose;
 
+    public GameObject block;
+
     private void Awake()
     {
         instance = this;
@@ -164,7 +166,10 @@ public class PvzService : MonoBehaviour
     {
         foreach (var i in zombies)
         {
-            GameObject.Destroy(i.gameObject);
+            if (i!=null)
+            {
+                Destroy(i.gameObject);
+            }
         }
 
         zombies = new List<ZombieBehaviour>();
@@ -191,6 +196,7 @@ public class PvzService : MonoBehaviour
     {
         Debug.Log("win");
         ChatService.instance.ShowChat(chatWin);
+        block.SetActive(false);
     }
 
     public void ExitPvzView()

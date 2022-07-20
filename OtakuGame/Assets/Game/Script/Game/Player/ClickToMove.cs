@@ -80,10 +80,10 @@ public class ClickToMove : MonoBehaviour
     public void ForceStop(bool b)
     {
         _forceStopFlag = b;
+        meshAgent.isStopped = b;
 
         if (_forceStopFlag)
         {
-            meshAgent.isStopped = true;
             characterAnimation.StopWalk();
         }
     }
