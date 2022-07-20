@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a191403bcc9d718439c9be1ebc931a87, type: 3}
   m_Name: chat-pvz-2
   m_EditorClassIdentifier: 
-  content: david is sexy
-  isRight: 0
+  content: Plant us!
   soundName: 
   next: {fileID: 0}
   chatSpecialAction: 1
-  chatSprite: 1
+  speaker: 0
   chatButtonDatas: []

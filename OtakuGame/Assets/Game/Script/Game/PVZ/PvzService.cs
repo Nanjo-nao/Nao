@@ -196,14 +196,14 @@ public class PvzService : MonoBehaviour
         e2.type = CinematicActionTypes.TweenPositionAndRotation;
 
         CinematicEventPrototype e3 = new CinematicEventPrototype();
-        e3.TimeToNext = 5;
+        e3.TimeToNext = 4f;
         e3.duration = 2f;
         e3.ease = DG.Tweening.Ease.InOutCubic;
         e3.type = CinematicActionTypes.TweenPositionAndRotation;
         e3.trans = transParam2;
 
         CinematicEventPrototype e4 = new CinematicEventPrototype();
-        e4.TimeToNext = 5.0f;
+        e4.TimeToNext = 4.0f;
         e4.trans = transParam3;
         e4.duration = 2.0f;
         e4.type = CinematicActionTypes.TweenPositionAndRotation;
