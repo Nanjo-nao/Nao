@@ -74,6 +74,14 @@ public class ChatService : MonoBehaviour
             case ChatPrototype.ChatSpecialAction.Kabi3:
                 GameSystem.instance.SetKabiStep3();
                 break;
+
+            case ChatPrototype.ChatSpecialAction.Move2Jumpers:
+                JumpingRaceSystem.instance.WalkToCenter();
+                break;
+
+            case ChatPrototype.ChatSpecialAction.StartRace:
+                JumpingRaceSystem.instance.StartRace();
+                break;
         }
     }
 

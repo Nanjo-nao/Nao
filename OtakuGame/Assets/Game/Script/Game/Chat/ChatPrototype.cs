@@ -39,6 +39,7 @@ public class ChatPrototype : ScriptableObject
         EndPvz,
         Kabi2,
         Kabi3,
+        Move2Jumpers,
     }
     public Speaker speaker;
 
