@@ -189,31 +189,37 @@ public class PvzService : MonoBehaviour
         };
 
         CinematicEventPrototype e2 = new CinematicEventPrototype();
-        e2.TimeToNext = 1.0f;
+        e2.TimeToNext = 1.5f;
         e2.trans = transParam1;
-
-        e2.duration = 1.0f;
+        e2.duration = 1.5f;
         e2.ease = DG.Tweening.Ease.OutCubic;
         e2.type = CinematicActionTypes.TweenPositionAndRotation;
 
         CinematicEventPrototype e3 = new CinematicEventPrototype();
         e3.TimeToNext = 5;
-        e3.duration = 5f;
+        e3.duration = 2f;
         e3.ease = DG.Tweening.Ease.InOutCubic;
         e3.type = CinematicActionTypes.TweenPositionAndRotation;
         e3.trans = transParam2;
 
         CinematicEventPrototype e4 = new CinematicEventPrototype();
-        e4.TimeToNext = 2.0f;
+        e4.TimeToNext = 5.0f;
         e4.trans = transParam3;
         e4.duration = 2.0f;
         e4.type = CinematicActionTypes.TweenPositionAndRotation;
         e4.ease = DG.Tweening.Ease.InOutCubic;
 
         CinematicEventPrototype e5 = new CinematicEventPrototype();
-        e5.TimeToNext = 0;
-        e5.type = CinematicActionTypes.CallFunc;
-        e5.action = () =>
+        e5.TimeToNext = 4.0f;
+        e5.trans = zombieSpawnPosFinal;
+        e5.duration = 4.0f;
+        e5.type = CinematicActionTypes.TweenPositionAndRotation;
+        e5.ease = DG.Tweening.Ease.InOutCubic;
+
+        CinematicEventPrototype e6 = new CinematicEventPrototype();
+        e6.TimeToNext = 0;
+        e6.type = CinematicActionTypes.CallFunc;
+        e6.action = () =>
         {
             InventoryBehaviour.instance.Show();
             PreparePvzArena();
@@ -224,6 +230,7 @@ public class PvzService : MonoBehaviour
         cinematic.AddEvents(e3);
         cinematic.AddEvents(e4);
         cinematic.AddEvents(e5);
+        cinematic.AddEvents(e6);
 
         cinematic.StartService();
         ClearPvzItems();

@@ -15,6 +15,8 @@ public class ZombieBehaviour : MonoBehaviour
 
     public GameObject dieVFX;
     private PlantBehaviour _currentPlant;
+    public Animator animator;
+    public Collider col;
 
     void Start()
     {
@@ -26,6 +28,12 @@ public class ZombieBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (_hp <= 0)
+        {
+            transform.position += Vector3.up * (-0.5f * Time.deltaTime);
+            return;
+        }
+
         if (_currentPlant == null)
         {
             Move();
@@ -89,7 +97,9 @@ public class ZombieBehaviour : MonoBehaviour
         Debug.Log("Die");
         var hit = Instantiate(dieVFX, transform.position, Quaternion.identity, transform.parent);
         hit.SetActive(true);
+        animator.SetTrigger("die");
         Destroy(hit, 2);
-        Destroy(gameObject);
+        Destroy(gameObject, 3);
+        col.enabled = false;
     }
 }
