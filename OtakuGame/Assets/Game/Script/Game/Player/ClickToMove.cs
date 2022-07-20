@@ -17,6 +17,8 @@ public class ClickToMove : MonoBehaviour
 
     public CharacterAnimationBehaviour characterAnimation;
 
+    public Transform startDest;
+
     private void Awake()
     {
         instance = this;
@@ -25,6 +27,12 @@ public class ClickToMove : MonoBehaviour
     public void Start()
     {
         _currentBalls = new List<GameObject>();
+
+        if (startDest != null)
+        {
+            destination.transform.position = startDest.position;
+            GoToDestination();
+        }
     }
 
     private void Update()
