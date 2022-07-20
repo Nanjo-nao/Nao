@@ -38,10 +38,6 @@ public class PvzService : MonoBehaviour
     private void Awake()
     {
         instance = this;
-    }
-
-    private void Start()
-    {
         ClearLevel();
     }
 
@@ -71,6 +67,24 @@ public class PvzService : MonoBehaviour
         _levelTimer = info.timeToNext * levelInfoIntervalScale;
     }
 
+    public void CheckWin()
+    {
+        if (_runningLevel)
+        {
+            return;
+        }
+
+        foreach (var z in zombies)
+        {
+            if (z != null && !z.IsDead())
+            {
+                return;
+            }
+        }
+
+        Win();
+    }
+
     void PlayLevelInfo(PvzLevelInfo info)
     {
         GameObject go = null;
@@ -93,8 +107,8 @@ public class PvzService : MonoBehaviour
         if (go != null)
         {
             go.SetActive(true);
+            zombies.Add(go.GetComponent<ZombieBehaviour>());
         }
-        zombies.Add(go.GetComponent<ZombieBehaviour>());
     }
 
     public PlantBehaviour Plant(Transform spot, string id)
@@ -152,6 +166,7 @@ public class PvzService : MonoBehaviour
         {
             GameObject.Destroy(i.gameObject);
         }
+
         zombies = new List<ZombieBehaviour>();
     }
 

@@ -41,9 +41,9 @@ public class ZombieBehaviour : MonoBehaviour
                 SetMat(true);
             }
         }
-        if (_hp <= 0)
+        if (IsDead())
         {
-            transform.position += Vector3.up * (-0.5f * Time.deltaTime);
+            transform.position += Vector3.up * (-0.4f * Time.deltaTime);
             return;
         }
 
@@ -101,12 +101,12 @@ public class ZombieBehaviour : MonoBehaviour
 
     public void OnAttacked(float dmg, bool reduceSpeed)
     {
-        if (_hp <= 0)
+        if (IsDead())
             return;
 
         _hp -= dmg;
-        Debug.Log("OnAttacked " + _hp + "/" + hpMax);
-        if (_hp <= 0)
+        //Debug.Log("OnAttacked " + _hp + "/" + hpMax);
+        if (IsDead())
         {
             Die();
         }
@@ -118,15 +118,22 @@ public class ZombieBehaviour : MonoBehaviour
         }
     }
 
+    public bool IsDead()
+    {
+        return _hp <= 0;
+    }
+
     public void Die()
     {
-        Debug.Log("Die");
+        //Debug.Log("Die");
         var hit = Instantiate(dieVFX, transform.position, Quaternion.identity, transform.parent);
         hit.SetActive(true);
         animator.SetTrigger("die");
         Destroy(hit, 2);
         Destroy(gameObject, 5);
         col.enabled = false;
+
+        PvzService.instance.CheckWin();
     }
 
     public void SetMat(bool normal)
