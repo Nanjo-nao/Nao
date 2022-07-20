@@ -6,7 +6,7 @@ using com;
 public class PvzService : MonoBehaviour
 {
     public static PvzService instance { get; private set; }
-    public CameraFollow mainCamera;
+    public CameraFollowWithLerp mainCamera;
     public ClickToMove move;
     public Transform transParam1;
     public Transform transParam2;
@@ -19,6 +19,7 @@ public class PvzService : MonoBehaviour
     public Transform zombieSpawnPos1;
     public Transform zombieSpawnPos2;
     public Transform zombieSpawnPos3;
+    public Transform zombieSpawnPosFinal;
 
     private int _levelPlayIndex;
     private bool _runningLevel;
