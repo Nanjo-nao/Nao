@@ -106,9 +106,9 @@ public class JumpingRaceSystem : MonoBehaviour
         };
 
         CinematicEventPrototype e4 = new CinematicEventPrototype();
-        e4.TimeToNext = 4.0f;
+        e4.TimeToNext = 4.2f;
         e4.trans = race.cam_2;
-        e4.duration = 3.0f;
+        e4.duration = 3.5f;
         e4.type = CinematicActionTypes.TweenPositionAndRotation;
         e4.ease = DG.Tweening.Ease.OutCubic;
 
@@ -136,32 +136,39 @@ public class JumpingRaceSystem : MonoBehaviour
         e7.ease = DG.Tweening.Ease.InCubic;
 
         CinematicEventPrototype e8 = new CinematicEventPrototype();
-        e8.TimeToNext = 3.5f;
+        e8.TimeToNext = 0.5f;
         e8.type = CinematicActionTypes.CallFunc;
         e8.action = () =>
         {
             ezio.ResetMove();
             geralt.ResetMove();
             mainCamera.SetEnable(true);
-            ezio.Happy();
             geralt.transform.position = moveToCenter_g.position;
             ezio.transform.position = moveToCenter_e.position;
+            geralt.Face(move.transform.position);
+            ezio.Face(move.transform.position);
         };
 
         CinematicEventPrototype e9 = new CinematicEventPrototype();
-        e9.TimeToNext = 1.5f;
+        e9.TimeToNext = 4.0f;
         e9.type = CinematicActionTypes.CallFunc;
         e9.action = () =>
         {
             mainCamera.SetEnable(true);
-            move.ForceStop(false);
-            ezio.ResetMove();
-            geralt.transform.position = moveToCenter_g.position;
-            ezio.transform.position = moveToCenter_e.position;
+            ezio.Happy();
+            ChatService.instance.ShowChat(chatRace1End);
+        };
 
+        CinematicEventPrototype e10 = new CinematicEventPrototype();
+        e10.TimeToNext = 0.5f;
+        e10.type = CinematicActionTypes.CallFunc;
+        e10.action = () =>
+        {
+            ezio.ResetMove();
+            
+            move.ForceStop(false);
             InventoryBehaviour.instance.Show();
             InventoryService.instance.AddItem("coin", 1);
-            ChatService.instance.ShowChat(chatRace1End);
         };
 
         cinematic.AddEvents(e1);
@@ -173,6 +180,7 @@ public class JumpingRaceSystem : MonoBehaviour
         cinematic.AddEvents(e7);
         cinematic.AddEvents(e8);
         cinematic.AddEvents(e9);
+        cinematic.AddEvents(e10);
         cinematic.StartService();
     }
 

@@ -9,6 +9,7 @@ public class CommonNpcBehaviour : MonoBehaviour
     bool _isWalking;
     bool _isFalling;
     bool _isFallingSuc;
+    public ParticleSystem ps;
 
     public void GoTo(Vector3 d)
     {
@@ -75,6 +76,7 @@ public class CommonNpcBehaviour : MonoBehaviour
         else
         {
             animator.SetTrigger("die");
+            PlayPs();
         }
         _isFalling = false;
     }
@@ -94,5 +96,18 @@ public class CommonNpcBehaviour : MonoBehaviour
     void RotateTo(Vector3 dir)
     {
         transform.rotation = Quaternion.LookRotation(dir);
+    }
+
+    public void Face(Vector3 position)
+    {
+        var dir = position - transform.position;
+        dir.y = 0;
+        RotateTo(dir);
+    }
+
+    public void PlayPs()
+    {
+        if (ps != null)
+            ps.Play();
     }
 }
