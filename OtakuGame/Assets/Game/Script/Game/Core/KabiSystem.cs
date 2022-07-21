@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-public class GameSystem : MonoBehaviour
+public class KabiSystem : MonoBehaviour
 {
-    public static GameSystem instance { get; private set; }
+    public static KabiSystem instance { get; private set; }
 
     public GameObject kabi;
     public GameObject kabiObs;

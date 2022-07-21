@@ -23,7 +23,7 @@ public class ClickTargetBehaviour : MonoBehaviour
         else if (id == "kabi" && data != null && data.id == "flute")
         {
             //Debug.Log("RemoveKabi ");
-            GameSystem.instance.RemoveKabi();
+            KabiSystem.instance.RemoveKabi();
             StopDraging(data.id);
         }
     }
