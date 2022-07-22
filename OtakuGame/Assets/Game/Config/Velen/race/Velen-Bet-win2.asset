@@ -15,6 +15,6 @@ MonoBehaviour:
   content: (^_^)
   soundName: 
   next: {fileID: 0}
-  chatSpecialAction: 5
+  chatSpecialAction: 14
   speaker: 6
   chatButtonDatas: []

@@ -15,6 +15,6 @@ MonoBehaviour:
   content: I win! Young lady, you are so wise to bet me win, here is your coin
   soundName: 
   next: {fileID: 0}
-  chatSpecialAction: 5
+  chatSpecialAction: 14
   speaker: 6
   chatButtonDatas: []

@@ -36,7 +36,7 @@ public class JumpingRaceSystem : MonoBehaviour
     public ChatPrototype winChat;
     public ChatPrototype looseChat;
     public ChatPrototype betChat;
-
+    public ChatPrototype continueChat;
     bool _receiveInput;
 
     int raceIndex
@@ -115,14 +115,20 @@ public class JumpingRaceSystem : MonoBehaviour
         }
     }
 
-    public void StartRace()
+    public void TryStartRace()
     {
-        _receiveInput = false;
         if (currentRace == null)
         {
             EndAllRaces();
             return;
         }
+
+        ChatService.instance.ShowChat(continueChat);
+    }
+
+    public void StartRace()
+    {
+        _receiveInput = false;
 
         SetupRace(currentRace);
     }
@@ -190,11 +196,11 @@ public class JumpingRaceSystem : MonoBehaviour
         cinematic.ResetEvents();
 
         CinematicEventPrototype e1 = new CinematicEventPrototype();
-        e1.TimeToNext = 3.2f;
-        e1.duration = 2.4f;
+        e1.TimeToNext = 2.0f;
+        e1.duration = 2.0f;
         e1.trans = race.cam_3;
         e1.type = CinematicActionTypes.TweenPositionAndRotation;
-        e1.ease = DG.Tweening.Ease.InBounce;
+        e1.ease = DG.Tweening.Ease.InBack;
 
         CinematicEventPrototype e2 = new CinematicEventPrototype();
         e2.TimeToNext = 0f;
