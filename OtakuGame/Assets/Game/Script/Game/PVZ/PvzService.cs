@@ -132,7 +132,7 @@ public class PvzService : MonoBehaviour
         if (res != null)
         {
             InventoryService.instance.RemoveItem(id, 1);
-            InventoryBehaviour.instance.SyncItems(InventoryService.instance.items);
+            InventoryBehaviour.instance.SyncItems();
         }
         plants.Add(res);
         InventoryService.instance.StopItemDraging();

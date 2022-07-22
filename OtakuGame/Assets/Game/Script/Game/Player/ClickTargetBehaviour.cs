@@ -41,7 +41,7 @@ public class ClickTargetBehaviour : MonoBehaviour
     void StopDraging(string id)
     {
         InventoryService.instance.RemoveItem(id, 1);
-        InventoryBehaviour.instance.SyncItems(InventoryService.instance.items);
+        InventoryBehaviour.instance.SyncItems();
         InventoryService.instance.StopItemDraging();
     }
 

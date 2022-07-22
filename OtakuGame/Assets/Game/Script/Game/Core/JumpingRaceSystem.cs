@@ -243,6 +243,7 @@ public class JumpingRaceSystem : MonoBehaviour
             mainCamera.SetEnable(true);
             ezio.Happy();
             ChatService.instance.ShowChat(GetRaceEndChat());
+            GiveRaceReward();
         };
 
         CinematicEventPrototype e6 = new CinematicEventPrototype();
@@ -252,7 +253,6 @@ public class JumpingRaceSystem : MonoBehaviour
         {
             ezio.ResetMove();
             move.ForceStop(false);
-            GiveRaceReward();
         };
 
         cinematic.AddEvents(e1);
@@ -266,14 +266,14 @@ public class JumpingRaceSystem : MonoBehaviour
 
     void GiveRaceReward()
     {
-        Debug.Log("GiveRaceReward");
+        Debug.Log("!!!GiveRaceReward");
         Debug.Log(GetWinResult());
-
+        InventoryBehaviour.instance.SyncItems();
         if (GetWinResult())
             InventoryService.instance.AddItem("coin", 1);
         else
             InventoryService.instance.RemoveItem("coin", 1);
-        InventoryBehaviour.instance.Show();
+        InventoryBehaviour.instance.SyncItems();
     }
 
     void EndAllRaces()

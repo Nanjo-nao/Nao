@@ -78,13 +78,18 @@ public class InventoryBehaviour : MonoBehaviour
     public void Show()
     {
         Debug.Log("--Show");
-        SyncItems(InventoryService.instance.items);
+        SyncItems();
 
         cg.DOKill();
         cg.DOFade(1, 0.6f);
         //cg.alpha = 1;
         cg.blocksRaycasts = true;
         cg.interactable = true;
+    }
+
+    public void SyncItems()
+    {
+        SyncItems(InventoryService.instance.items);
     }
 
     public void SyncItems(List<ItemData> items)
