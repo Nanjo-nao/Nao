@@ -1,16 +1,10 @@
 ﻿using UnityEngine;
-using System.Collections;
 using com;
 
 public class JumpingRaceSystem : MonoBehaviour
 {
     public static JumpingRaceSystem instance;
     public GameObject block;
-
-    public ChatPrototype chatRace1End;
-    public ChatPrototype chatRace2End;
-    public ChatPrototype chatRace3End;
-    public ChatPrototype chatRacesEnd;
 
     public Transform moveToCenter_g;
     public Transform moveToCenter_e;
@@ -33,7 +27,10 @@ public class JumpingRaceSystem : MonoBehaviour
         public Transform cam_2;//tween
         public Transform cam_3;//cut to
         public Transform cam_4;//tween
+
+        public ChatPrototype endChat;
     }
+
     public RaceParam race1;
     public RaceParam race2;
     public RaceParam race3;
@@ -129,7 +126,7 @@ public class JumpingRaceSystem : MonoBehaviour
         };
 
         CinematicEventPrototype e7 = new CinematicEventPrototype();
-        e7.TimeToNext = 4.0f;
+        e7.TimeToNext = 5.0f;
         e7.trans = race.cam_4;
         e7.duration = 3.0f;
         e7.type = CinematicActionTypes.TweenPositionAndRotation;
@@ -156,7 +153,7 @@ public class JumpingRaceSystem : MonoBehaviour
         {
             mainCamera.SetEnable(true);
             ezio.Happy();
-            ChatService.instance.ShowChat(chatRace1End);
+            ChatService.instance.ShowChat(race.endChat);
         };
 
         CinematicEventPrototype e10 = new CinematicEventPrototype();
@@ -165,7 +162,6 @@ public class JumpingRaceSystem : MonoBehaviour
         e10.action = () =>
         {
             ezio.ResetMove();
-            
             move.ForceStop(false);
             InventoryBehaviour.instance.Show();
             InventoryService.instance.AddItem("coin", 1);
@@ -196,6 +192,9 @@ public class JumpingRaceSystem : MonoBehaviour
     void EndAllRaces()
     {
         block.SetActive(false);
-        ChatService.instance.ShowChat(chatRacesEnd);
+        InventoryBehaviour.instance.Show();
+        // InventoryService.instance.AddItem("coin", 1);
+        mainCamera.SetEnable(true);
+        move.ForceStop(false);
     }
 }
