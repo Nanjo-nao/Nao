@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: coin
   title: Flute
-  sp: {fileID: 21300000, guid: de671c7bd70da024c8e0f407ed95e792, type: 3}
+  sp: {fileID: 21300000, guid: fe09da8d666e60c4fa4cbce0f9e234ce, type: 3}
   usage: 3

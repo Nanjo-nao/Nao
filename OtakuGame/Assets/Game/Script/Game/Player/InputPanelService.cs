@@ -74,15 +74,12 @@ public class InputPanelService : MonoBehaviour, IGameFlow
         {
             ct.OnClicked(InventoryService.instance.GetDragItemData());
             if (!ct.stillNavHere)
-            {
                 return;
-            }
         }
 
         if (dragging)
-        {
             return;
-        }
+
         ClickToMove.instance.CheckClick();
     }
 

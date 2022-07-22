@@ -12,19 +12,29 @@ public class ClickTargetBehaviour : MonoBehaviour
     {
         //Debug.Log("ClickTarget " + gameObject + " " + id + " isDraging " + InventoryBehaviour.instance.isDraging);
         //Debug.Log("ClickTarget " + gameObject + " " + id + " " + data.id);
-        //Debug.Log(id);
-        //Debug.Log(data.id);
-        //Debug.Log(id == "kabi");
-        //Debug.Log(data.id == "flute");
+        if (id == "ezio")
+        {
+            JumpingRaceSystem.instance.OnBetEzio();
+            return;
+        }
+
+        if (id == "geralt")
+        {
+            JumpingRaceSystem.instance.OnBetGeraltWin();
+            return;
+        }
+
         if (id == "plant" && _plant == null && (data != null && (data.id == "psht" || data.id == "fsht")))
         {
             PlantAPlant(data.id);
+            return;
         }
-        else if (id == "kabi" && data != null && data.id == "flute")
+
+        if (id == "kabi" && data != null && data.id == "flute")
         {
-            //Debug.Log("RemoveKabi ");
             KabiSystem.instance.RemoveKabi();
             StopDraging(data.id);
+            return;
         }
     }
 

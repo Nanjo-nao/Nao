@@ -15,18 +15,6 @@ public class InventoryService : MonoBehaviour
     private void Start()
     {
         ClearItems();
-
-        //Test();
-    }
-
-    void Test()
-    {
-        AddItem("coin", 2);
-
-        AddItem("flute", 2);
-        RemoveItem("flute", 1);
-
-        InventoryBehaviour.instance.Show();
     }
 
     public ItemPrototype GetPrototype(string id)
@@ -34,9 +22,7 @@ public class InventoryService : MonoBehaviour
         foreach (var i in ConfigService.instance.itemsConfig.list)
         {
             if (i != null && i.id == id)
-            {
                 return i;
-            }
         }
         return null;
     }
@@ -60,6 +46,17 @@ public class InventoryService : MonoBehaviour
         items.Add(new ItemData(n, id));
     }
 
+    public int GetItemCount(string id)
+    {
+        foreach (var i in items)
+        {
+            if (i.id == id)
+                return i.n;
+        }
+
+        return 0;
+    }
+
     public void ClearItems()
     {
         items = new List<ItemData>();
@@ -78,9 +75,8 @@ public class InventoryService : MonoBehaviour
             {
                 i.n -= n;
                 if (i.n <= 0)
-                {
                     items.Remove(i);
-                }
+
                 return true;
             }
         }
@@ -114,10 +110,8 @@ public class InventoryService : MonoBehaviour
 
     public ItemData GetDragItemData()
     {
-        if (_dragingSlot==null)
-        {
+        if (_dragingSlot == null)
             return null;
-        }
 
         return _dragingSlot.data;
     }
