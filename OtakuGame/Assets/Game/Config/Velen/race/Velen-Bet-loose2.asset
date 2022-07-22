@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a191403bcc9d718439c9be1ebc931a87, type: 3}
   m_Name: Velen-Bet-loose2
   m_EditorClassIdentifier: 
-  content: I win! Young lady, you are so wise to bet me win, here is your coin
+  content: (T_T)
   soundName: 
   next: {fileID: 0}
   chatSpecialAction: 14

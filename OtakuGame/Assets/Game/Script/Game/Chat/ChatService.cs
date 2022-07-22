@@ -102,14 +102,14 @@ public class ChatService : MonoBehaviour
         if (_chat == null)
             return;
 
-        PerformChatSpecialAction();
-
         if (_chat.next == null)
         {
             EndChat();
+            PerformChatSpecialAction();
             return;
         }
 
+        PerformChatSpecialAction();
         ShowChat(_chat.next);
     }
 

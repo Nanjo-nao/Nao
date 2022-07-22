@@ -123,6 +123,7 @@ public class JumpingRaceSystem : MonoBehaviour
             return;
         }
 
+        ChatService.instance.EndChat();
         ChatService.instance.ShowChat(continueChat);
     }
 
@@ -143,7 +144,7 @@ public class JumpingRaceSystem : MonoBehaviour
         e1.type = CinematicActionTypes.CallFunc;
         e1.action = () =>
         {
-            InventoryBehaviour.instance.Hide();
+            //InventoryBehaviour.instance.Hide();
             mainCamera.SetEnable(false);
             move.ForceStop(true);
         };
