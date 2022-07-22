@@ -197,8 +197,8 @@ public class JumpingRaceSystem : MonoBehaviour
         cinematic.ResetEvents();
 
         CinematicEventPrototype e1 = new CinematicEventPrototype();
-        e1.TimeToNext = 2.0f;
-        e1.duration = 2.0f;
+        e1.TimeToNext = 1.5f;
+        e1.duration = 1.5f;
         e1.trans = race.cam_3;
         e1.type = CinematicActionTypes.TweenPositionAndRotation;
         e1.ease = DG.Tweening.Ease.InBack;
@@ -266,11 +266,14 @@ public class JumpingRaceSystem : MonoBehaviour
 
     void GiveRaceReward()
     {
-        InventoryBehaviour.instance.Show();
+        Debug.Log("GiveRaceReward");
+        Debug.Log(GetWinResult());
+
         if (GetWinResult())
             InventoryService.instance.AddItem("coin", 1);
         else
             InventoryService.instance.RemoveItem("coin", 1);
+        InventoryBehaviour.instance.Show();
     }
 
     void EndAllRaces()

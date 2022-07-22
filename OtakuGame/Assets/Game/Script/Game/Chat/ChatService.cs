@@ -26,11 +26,11 @@ public class ChatService : MonoBehaviour
         ChatPanelBehaviour.instance.Show(_chat);
     }
 
-    public void PerformChatSpecialAction()
+    public void PerformChatSpecialAction(ChatPrototype.ChatSpecialAction a)
     {
         //Debug.Log("PerformChatSpecialAction");
-        Debug.Log(_chat.chatSpecialAction);
-        switch (_chat.chatSpecialAction)
+        Debug.Log(a);
+        switch (a)
         {
             case ChatPrototype.ChatSpecialAction.None:
                 break;
@@ -102,14 +102,15 @@ public class ChatService : MonoBehaviour
         if (_chat == null)
             return;
 
+        var a = _chat.chatSpecialAction;
         if (_chat.next == null)
         {
             EndChat();
-            PerformChatSpecialAction();
+            PerformChatSpecialAction(a);
             return;
         }
 
-        PerformChatSpecialAction();
+        PerformChatSpecialAction(a);
         ShowChat(_chat.next);
     }
 
