@@ -17,6 +17,7 @@ public class ErdTreeTriggerEnterBehaviour : MonoBehaviour
                     if (hideAfterTrigger)
                         gameObject.SetActive(false);
                     break;
+
             }
         }
     }

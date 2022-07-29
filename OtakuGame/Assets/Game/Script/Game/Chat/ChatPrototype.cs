@@ -32,7 +32,7 @@ public class ChatPrototype : ScriptableObject
         Shake2,
         Shake3,
         StartRace,
-        GiveMoneyTo3Finger,//1
+        ShowTreeFinger,//1
         BurnTree,//1
         RemoveObstacle,
         RestartPvz,

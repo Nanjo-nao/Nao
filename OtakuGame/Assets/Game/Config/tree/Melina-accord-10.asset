@@ -15,6 +15,6 @@ MonoBehaviour:
   content: 'I will guide you. Down the path to becoming Elden Lord. '
   soundName: 
   next: {fileID: 0}
-  chatSpecialAction: 0
+  chatSpecialAction: 6
   speaker: 2
   chatButtonDatas: []

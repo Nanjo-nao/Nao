@@ -86,6 +86,14 @@ public class ChatService : MonoBehaviour
             case ChatPrototype.ChatSpecialAction.TryStartRace:
                 JumpingRaceSystem.instance.TryStartRace();
                 break;
+
+            case ChatPrototype.ChatSpecialAction.ShowTreeFinger:
+                EldTreeSystem.instance.ShowTreeFinger();
+                break;
+
+            case ChatPrototype.ChatSpecialAction.BurnTree:
+                EldTreeSystem.instance.BurnTree();
+                break;
         }
     }
 
