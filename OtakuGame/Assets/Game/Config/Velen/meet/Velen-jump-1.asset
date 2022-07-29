@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Velen-jump-1
   m_EditorClassIdentifier: 
   content: 'Hey, do you want to play Gwent? This guy was beaten by me just now. '
-  soundName: 
+  soundName: jump1
   next: {fileID: 11400000, guid: 8f66a6d057586b74e8211158b2e2270f, type: 2}
   chatSpecialAction: 0
   speaker: 3

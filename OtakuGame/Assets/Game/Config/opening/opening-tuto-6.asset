@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: opening-tuto-6
   m_EditorClassIdentifier: 
   content: 'Hear...Feel...Think... '
-  soundName: chat-hear
+  soundName: chat-hear4
   next: {fileID: 0}
   chatSpecialAction: 0
   speaker: 7

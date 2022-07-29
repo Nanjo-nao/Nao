@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a191403bcc9d718439c9be1ebc931a87, type: 3}
   m_Name: Velen-Bet-loose1
   m_EditorClassIdentifier: 
-  content: I win! Young lady, so stupid to bet him win, you loose a coin!
-  soundName: 
+  content: I win! Young lady, you are so stupid to bet him win, you loose a coin!
+  soundName: betloose
   next: {fileID: 11400000, guid: 9bed485ae3d0ea146afc96f56ea5dcef, type: 2}
   chatSpecialAction: 0
   speaker: 5

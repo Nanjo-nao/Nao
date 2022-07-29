@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: backyard-win
   m_EditorClassIdentifier: 
   content: Yeah you win!
-  soundName: 
+  soundName: backyard-win
   next: {fileID: 0}
   chatSpecialAction: 10
   speaker: 7

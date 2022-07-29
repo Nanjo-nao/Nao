@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: opening-tuto-3
   m_EditorClassIdentifier: 
   content: 'You should not know, just click the ground to move. '
-  soundName: 
+  soundName: chat-hear2
   next: {fileID: 11400000, guid: 5f0c085ef2ff41f46a9c47bb3489458b, type: 2}
   chatSpecialAction: 0
   speaker: 7

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: kabi-meet-1
   m_EditorClassIdentifier: 
   content: 'There''s a huge monster blocking the way ahead... '
-  soundName: 
+  soundName: kabi-meet
   next: {fileID: 11400000, guid: 480113c2825d75642a35a33d9ca7b093, type: 2}
   chatSpecialAction: 0
   speaker: 7

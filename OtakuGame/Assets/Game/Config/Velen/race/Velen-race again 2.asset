@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Velen-race again 2
   m_EditorClassIdentifier: 
   content: No problem, Who is the looser?
-  soundName: 
+  soundName: again2
   next: {fileID: 0}
   chatSpecialAction: 5
   speaker: 5

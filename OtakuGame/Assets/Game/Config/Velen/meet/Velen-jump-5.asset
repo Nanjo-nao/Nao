@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Velen-jump-5
   m_EditorClassIdentifier: 
   content: 'I don''t care. I must beat you hard. '
-  soundName: 
+  soundName: jump5
   next: {fileID: 11400000, guid: 975f4303ce021794cb124c18eeca7bd3, type: 2}
   chatSpecialAction: 0
   speaker: 3

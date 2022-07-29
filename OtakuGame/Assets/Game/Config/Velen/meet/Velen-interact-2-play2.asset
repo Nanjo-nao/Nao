@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Velen-interact-2-play2
   m_EditorClassIdentifier: 
   content: 'Haha, I give you one more chance. '
-  soundName: 
+  soundName: 2play2
   next: {fileID: 11400000, guid: 975f4303ce021794cb124c18eeca7bd3, type: 2}
   chatSpecialAction: 0
   speaker: 5

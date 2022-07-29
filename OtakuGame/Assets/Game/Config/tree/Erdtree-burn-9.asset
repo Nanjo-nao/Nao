@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Erdtree-burn-9
   m_EditorClassIdentifier: 
   content: 'When the land they preside over is lifeless. '
-  soundName: 
+  soundName: burn9
   next: {fileID: 11400000, guid: dbef631a72b7b2742879759f9dce548f, type: 2}
   chatSpecialAction: 0
   speaker: 2

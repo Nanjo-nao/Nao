@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: kabi-gotFlute-1
   m_EditorClassIdentifier: 
   content: 'Click the item, then click the monster to use the item. '
-  soundName: 
+  soundName: kabi-flute
   next: {fileID: 11400000, guid: e637ecc218bc9a04f9f51439aacb4fe1, type: 2}
   chatSpecialAction: 0
   speaker: 7

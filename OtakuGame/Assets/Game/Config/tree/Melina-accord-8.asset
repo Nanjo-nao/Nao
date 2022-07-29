@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Melina-accord-8
   m_EditorClassIdentifier: 
   content: 'Now I fear death, I don''t want to burn myself to die. '
-  soundName: 
+  soundName: accord8
   next: {fileID: 11400000, guid: ef6a87638932bbe44b88c967dd74699f, type: 2}
   chatSpecialAction: 0
   speaker: 2

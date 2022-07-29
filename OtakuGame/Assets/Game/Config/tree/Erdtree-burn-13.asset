@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Erdtree-burn-13
   m_EditorClassIdentifier: 
   content: 'Follow me, my only lord. '
-  soundName: 
+  soundName: burn13
   next: {fileID: 11400000, guid: 1fcc49e677d7aa54ea59bb889fd44d1a, type: 2}
   chatSpecialAction: 0
   speaker: 2

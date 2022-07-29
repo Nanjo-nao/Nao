@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Erdtree-burn-5
   m_EditorClassIdentifier: 
   content: 'This world will become ruin and get mired in torment and despair. '
-  soundName: 
+  soundName: burn5
   next: {fileID: 11400000, guid: 6528b61c1ff53a74d86176922e58dcc5, type: 2}
   chatSpecialAction: 0
   speaker: 2

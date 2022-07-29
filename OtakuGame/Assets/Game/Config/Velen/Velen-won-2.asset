@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Velen-won-2
   m_EditorClassIdentifier: 
   content: 'Thank you for your support, madam, it''s time for me to go back to Florence. '
-  soundName: 
+  soundName: won2
   next: {fileID: 11400000, guid: 8797df517fdd02248a95961945b531a5, type: 2}
   chatSpecialAction: 0
   speaker: 5

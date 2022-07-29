@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Velen-won-1
   m_EditorClassIdentifier: 
   content: 'Well, I admit you won. '
-  soundName: 
+  soundName: won1
   next: {fileID: 11400000, guid: 68400c8fbd2610040bfa469689c4dd7b, type: 2}
   chatSpecialAction: 0
   speaker: 3

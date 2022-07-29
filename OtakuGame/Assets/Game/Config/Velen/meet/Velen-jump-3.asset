@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Velen-jump-3
   m_EditorClassIdentifier: 
   content: 'Anyway, I won the Gwent. Tell me, what''s next? '
-  soundName: 
+  soundName: jump3
   next: {fileID: 11400000, guid: b01fb3f27585f2948be6c8132832d20f, type: 2}
   chatSpecialAction: 0
   speaker: 3

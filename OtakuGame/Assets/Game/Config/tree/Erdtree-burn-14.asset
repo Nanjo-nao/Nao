@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Erdtree-burn-14
   m_EditorClassIdentifier: 
   content: 'You shall go to the outsider world and study Game Design with me. '
-  soundName: 
+  soundName: burn14
   next: {fileID: 0}
   chatSpecialAction: 7
   speaker: 2
