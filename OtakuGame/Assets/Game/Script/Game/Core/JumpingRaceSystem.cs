@@ -217,7 +217,7 @@ public class JumpingRaceSystem : MonoBehaviour
         };
 
         CinematicEventPrototype e3 = new CinematicEventPrototype();
-        e3.TimeToNext = 5.0f;
+        e3.TimeToNext = 4.0f;
         e3.trans = race.cam_4;
         e3.duration = 2.5f;
         e3.type = CinematicActionTypes.TweenPositionAndRotation;
@@ -238,7 +238,7 @@ public class JumpingRaceSystem : MonoBehaviour
         };
 
         CinematicEventPrototype e5 = new CinematicEventPrototype();
-        e5.TimeToNext = 4.0f;
+        e5.TimeToNext = 3.8f;
         e5.type = CinematicActionTypes.CallFunc;
         e5.action = () =>
         {

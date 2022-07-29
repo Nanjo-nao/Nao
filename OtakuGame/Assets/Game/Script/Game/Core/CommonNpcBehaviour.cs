@@ -5,6 +5,7 @@ public class CommonNpcBehaviour : MonoBehaviour
     public Animator animator;
     public float speed = 4f;
     public float speedFall = 7f;
+
     Vector3 _dest;
     bool _isWalking;
     bool _isFalling;
@@ -25,6 +26,11 @@ public class CommonNpcBehaviour : MonoBehaviour
         _isFalling = true;
         _isFallingSuc = suc;
         animator.SetTrigger("jump");
+    }
+
+    public void Knee()
+    {
+        animator.SetTrigger("knee");
     }
 
     private void Update()

@@ -39,7 +39,11 @@ namespace com
             {
                 foreach (var info in i.siList)
                 {
-                    _siDic.Add(info.name, info.ac);
+                    if (info.name != "" && !_siDic.ContainsKey(info.name))
+                    {
+                        _siDic.Add(info.name, info.ac);
+                    }
+
                     //Debug.Log("dic " + info.name + " " + info.ac);
                 }
             }
