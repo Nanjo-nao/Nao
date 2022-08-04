@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Erdtree-burn-12
   m_EditorClassIdentifier: 
   content: 'Everything is lost to me. '
-  soundName: 
+  soundName: burn12
   next: {fileID: 11400000, guid: 3409520583e86e34d9e66c5859294835, type: 2}
   chatSpecialAction: 0
   speaker: 2

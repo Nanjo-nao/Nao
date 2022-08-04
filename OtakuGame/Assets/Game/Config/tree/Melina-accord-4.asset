@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Melina-accord-4
   m_EditorClassIdentifier: 
   content: 'Did you see this Erdtree? This is my hometown. '
-  soundName: 
+  soundName: accord4
   next: {fileID: 11400000, guid: e95cfaeb66b888548a79bf7027d7cc4a, type: 2}
   chatSpecialAction: 0
   speaker: 2

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: kabi-path-1
   m_EditorClassIdentifier: 
   content: 'There''s a flute, you can collect it! '
-  soundName: 
+  soundName: kabi-path
   next: {fileID: 11400000, guid: 6c243e714c41c9d4285da9383d255e92, type: 2}
   chatSpecialAction: 0
   speaker: 7

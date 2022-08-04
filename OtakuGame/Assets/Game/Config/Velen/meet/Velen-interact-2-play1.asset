@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Velen-interact-2-play1
   m_EditorClassIdentifier: 
   content: 'No, If it''s a running race, he will win. '
-  soundName: 
+  soundName: 2play1
   next: {fileID: 11400000, guid: 816dcf09e3d27f348b1d53b08a7eb68c, type: 2}
   chatSpecialAction: 0
   speaker: 3

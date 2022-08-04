@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Melina-accord-10
   m_EditorClassIdentifier: 
   content: 'I will guide you. Down the path to becoming Elden Lord. '
-  soundName: 
+  soundName: accord10
   next: {fileID: 0}
   chatSpecialAction: 6
   speaker: 2

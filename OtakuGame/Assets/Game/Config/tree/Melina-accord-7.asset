@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Melina-accord-7
   m_EditorClassIdentifier: 
   content: 'I came back here after a lot of hard work, but I regret. '
-  soundName: 
+  soundName: accord7
   next: {fileID: 11400000, guid: e58f559fd60efa64d89862217e71c536, type: 2}
   chatSpecialAction: 0
   speaker: 2

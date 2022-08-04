@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Melina-accord-5
   m_EditorClassIdentifier: 
   content: 'I was born at the foot of the Erdtree. Where mother gave me my purpose.  '
-  soundName: 
+  soundName: accord5
   next: {fileID: 11400000, guid: 967198b008597e543aaed5139a159536, type: 2}
   chatSpecialAction: 0
   speaker: 2

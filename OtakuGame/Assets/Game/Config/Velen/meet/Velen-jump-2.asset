@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Velen-jump-2
   m_EditorClassIdentifier: 
   content: 'Don''t listen to him, he cheats. '
-  soundName: 
+  soundName: jump2
   next: {fileID: 11400000, guid: 76990d9a3f8815546804b6e7fa1d4aa4, type: 2}
   chatSpecialAction: 0
   speaker: 5

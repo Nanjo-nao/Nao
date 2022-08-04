@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Velen-bet1
   m_EditorClassIdentifier: 
   content: 'Let''s bet a golden token, Who do you think will win? '
-  soundName: 
+  soundName: bet1
   next: {fileID: 11400000, guid: d68f2634b266dd24f8edcdaefb585fc4, type: 2}
   chatSpecialAction: 0
   speaker: 3

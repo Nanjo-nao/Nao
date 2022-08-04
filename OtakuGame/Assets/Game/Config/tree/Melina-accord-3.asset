@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Melina-accord-3
   m_EditorClassIdentifier: 
   content: 'I am Melina. '
-  soundName: 
+  soundName: accord3
   next: {fileID: 11400000, guid: e09eb2c6cd7746e438b803dee65f0ad5, type: 2}
   chatSpecialAction: 0
   speaker: 2

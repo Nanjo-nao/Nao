@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Erdtree-burn-3
   m_EditorClassIdentifier: 
   content: ' It is not to be meddled with. you deny the existence of life. '
-  soundName: 
+  soundName: burn3
   next: {fileID: 11400000, guid: 4ec05da860d21e24b9a41493fd6336f7, type: 2}
   chatSpecialAction: 0
   speaker: 2

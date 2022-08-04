@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Melina-accord-2
   m_EditorClassIdentifier: 
   content: 'I offer you an accord. '
-  soundName: 
+  soundName: accord2
   next: {fileID: 11400000, guid: a84289ae81d717443ab2a15b87b0e30f, type: 2}
   chatSpecialAction: 0
   speaker: 2

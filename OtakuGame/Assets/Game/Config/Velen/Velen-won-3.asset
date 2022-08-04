@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Velen-won-3
   m_EditorClassIdentifier: 
   content: 'It''s time for me to go to Kaer Morhen too. '
-  soundName: 
+  soundName: won3
   next: {fileID: 11400000, guid: b8391947b241119428b54de8f55063f3, type: 2}
   chatSpecialAction: 0
   speaker: 3

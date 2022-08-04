@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Melina-accord-6
   m_EditorClassIdentifier: 
   content: 'I must set the Erdtree aflame. '
-  soundName: 
+  soundName: accord6
   next: {fileID: 11400000, guid: 1f65e532c53d2c14c873c7166da3815b, type: 2}
   chatSpecialAction: 0
   speaker: 2

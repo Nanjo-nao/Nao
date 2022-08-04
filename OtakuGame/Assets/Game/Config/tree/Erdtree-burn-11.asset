@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   content: 'But this has nothing to do with me. As long as the Erdtree is burned,
     my purpose will be completed. '
-  soundName: 
+  soundName: burn11
   next: {fileID: 11400000, guid: ea1e5b03660543f4ba2854fb53a82946, type: 2}
   chatSpecialAction: 0
   speaker: 2

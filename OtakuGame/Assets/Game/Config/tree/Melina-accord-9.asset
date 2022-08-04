@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Melina-accord-9
   m_EditorClassIdentifier: 
   content: 'Can you help me burn the Erdtree? In return, '
-  soundName: 
+  soundName: accord9
   next: {fileID: 11400000, guid: 74d71b36466b26349880bf5964c2cc6a, type: 2}
   chatSpecialAction: 0
   speaker: 2

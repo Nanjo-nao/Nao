@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Velen-won-4
   m_EditorClassIdentifier: 
   content: 'Goodbye!  '
-  soundName: 
+  soundName: won4
   next: {fileID: 11400000, guid: 793dae7f707506747894ea413cb54bd6, type: 2}
   chatSpecialAction: 0
   speaker: 5

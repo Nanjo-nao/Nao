@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Velen-race again 1
   m_EditorClassIdentifier: 
   content: Let race again!
-  soundName: 
+  soundName: again1
   next: {fileID: 11400000, guid: f68db494c0e5426459f06671204473fd, type: 2}
   chatSpecialAction: 0
   speaker: 3

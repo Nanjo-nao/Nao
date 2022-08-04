@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: opening-tuto-5
   m_EditorClassIdentifier: 
   content: 'I will guide you when you need. '
-  soundName: 
+  soundName: chat-hear3
   next: {fileID: 11400000, guid: 5bb3edc1688cbe1418134b9a1c0453f5, type: 2}
   chatSpecialAction: 0
   speaker: 7

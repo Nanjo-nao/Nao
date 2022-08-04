@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Velen-interact-3-play1
   m_EditorClassIdentifier: 
   content: 'Sounds good. '
-  soundName: 
+  soundName: 3play1
   next: {fileID: 11400000, guid: c366b3e2a4db581408642082fcba2cb2, type: 2}
   chatSpecialAction: 0
   speaker: 3

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Erdtree-burn-1
   m_EditorClassIdentifier: 
   content: 'You have been blessed with Frenzied Flame? for me? '
-  soundName: 
+  soundName: burn1
   next: {fileID: 11400000, guid: ceefc63095d31b6419fbd198ae40b6f1, type: 2}
   chatSpecialAction: 0
   speaker: 2

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Melina-accord-1
   m_EditorClassIdentifier: 
   content: 'How could tarnished come here. '
-  soundName: 
+  soundName: accord1
   next: {fileID: 11400000, guid: 813df85658181324db6759a99bf9648d, type: 2}
   chatSpecialAction: 0
   speaker: 2

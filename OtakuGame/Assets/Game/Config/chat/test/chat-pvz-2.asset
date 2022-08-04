@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: chat-pvz-2
   m_EditorClassIdentifier: 
   content: Save us from Parasects!!!
-  soundName: 
+  soundName: plant2
   next: {fileID: 0}
   chatSpecialAction: 1
   speaker: 0

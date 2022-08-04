@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   content: 'Hello young lady, we don''t know what to play next, could you give us
     an idea? '
-  soundName: 
+  soundName: 1
   next: {fileID: 0}
   chatSpecialAction: 0
   speaker: 5

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Erdtree-burn-7
   m_EditorClassIdentifier: 
   content: 'The Lord of Frenzied Flame is no lord at all. '
-  soundName: 
+  soundName: burn7
   next: {fileID: 11400000, guid: 4b747ed13bd1cb6478ad36bb0870b052, type: 2}
   chatSpecialAction: 0
   speaker: 2

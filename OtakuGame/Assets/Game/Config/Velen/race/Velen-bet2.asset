@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Velen-bet2
   m_EditorClassIdentifier: 
   content: <size=200%>Tap on a hero</size> to bet him can make a safe jump!
-  soundName: 
+  soundName: bet2
   next: {fileID: 0}
   chatSpecialAction: 0
   speaker: 7

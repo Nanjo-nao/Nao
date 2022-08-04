@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Velen-interact-3-play2
   m_EditorClassIdentifier: 
   content: 'I agree. '
-  soundName: 
+  soundName: 3play2
   next: {fileID: 0}
   chatSpecialAction: 5
   speaker: 5
