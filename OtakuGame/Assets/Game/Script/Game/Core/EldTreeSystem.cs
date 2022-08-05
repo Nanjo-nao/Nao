@@ -128,6 +128,7 @@ public class EldTreeSystem : MonoBehaviour
         e5.action = () =>
         {
             ThreeFinger.SetActive(true);
+            com.SoundService.instance.Play("showFinger");
         };
         e5.type = CinematicActionTypes.CallFunc;
 
@@ -154,6 +155,8 @@ public class EldTreeSystem : MonoBehaviour
         Debug.Log("BurnTree");
         var cinematic = CinematicCameraService.instance;
         cinematic.ResetEvents();
+
+        com.SoundService.instance.Play("burnTree");
 
         CinematicEventPrototype e1 = new CinematicEventPrototype();
         e1.TimeToNext = 0;

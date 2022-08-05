@@ -45,6 +45,7 @@ public class InventoryBehaviour : MonoBehaviour
 
     public void StartDrag()
     {
+        com.SoundService.instance.Play("drag");
         Debug.Log("StartDrag");
         isDraging = true;
         imgDrag.gameObject.SetActive(true);
@@ -56,6 +57,7 @@ public class InventoryBehaviour : MonoBehaviour
 
     public void StopDrag()
     {
+        com.SoundService.instance.Play("drop");
         Debug.Log("StopDrag");
         isDraging = false;
         imgDrag.gameObject.SetActive(false);

@@ -97,6 +97,7 @@ public class ChatService : MonoBehaviour
 
             case ChatPrototype.ChatSpecialAction.Give1Coin:
                 InventoryService.instance.RemoveItem("coin", 1);
+                com.SoundService.instance.Play("looseCoin");
                 InventoryBehaviour.instance.SyncItems();
                 break;
 

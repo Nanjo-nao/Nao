@@ -272,9 +272,16 @@ public class JumpingRaceSystem : MonoBehaviour
         Debug.Log(GetWinResult());
         InventoryBehaviour.instance.SyncItems();
         if (GetWinResult())
+        {
             InventoryService.instance.AddItem("coin", 1);
+            com.SoundService.instance.Play("getCoin");
+        }
         else
+        {
             InventoryService.instance.RemoveItem("coin", 1);
+            com.SoundService.instance.Play("looseCoin");
+        }
+
         InventoryBehaviour.instance.SyncItems();
     }
 
