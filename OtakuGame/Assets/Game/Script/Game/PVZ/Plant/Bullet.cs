@@ -29,6 +29,7 @@ public class Bullet : MonoBehaviour
     {
         if (col.transform.tag == "Zombie")
         {
+            com.SoundService.instance.Play("pvzHit");
             var zombie = col.transform.GetComponent<ZombieBehaviour>();
             zombie.OnAttacked(damage, reduceSpeed);
 

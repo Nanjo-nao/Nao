@@ -25,6 +25,10 @@ public class CommonNpcBehaviour : MonoBehaviour
         _dest = d;
         _isFalling = true;
         _isFallingSuc = suc;
+        if (!suc)
+        {
+            com.SoundService.instance.Play("grtFall");
+        }
         animator.SetTrigger("jump");
     }
 

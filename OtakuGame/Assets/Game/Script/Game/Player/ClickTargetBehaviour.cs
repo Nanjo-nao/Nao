@@ -34,6 +34,7 @@ public class ClickTargetBehaviour : MonoBehaviour
         {
             KabiSystem.instance.RemoveKabi();
             StopDraging(data.id);
+            com.SoundService.instance.Play("flutePlay");
             return;
         }
     }

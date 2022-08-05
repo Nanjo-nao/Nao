@@ -12,4 +12,5 @@ public class ChatConfig : ScriptableObject
     public Sprite snx_r;
     public Sprite threefg_r;
     public Sprite hdl_r;
+    public Sprite gds_r;
 }
