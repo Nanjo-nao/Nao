@@ -94,6 +94,10 @@ public class ChatService : MonoBehaviour
             case ChatPrototype.ChatSpecialAction.BurnTree:
                 EldTreeSystem.instance.BurnTree();
                 break;
+
+            case ChatPrototype.ChatSpecialAction.Give1Coin:
+                InventoryService.instance.RemoveItem("coin", 1);
+                break;
         }
     }
 

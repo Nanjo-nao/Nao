@@ -15,6 +15,7 @@ public class InventoryService : MonoBehaviour
     private void Start()
     {
         ClearItems();
+        InventoryService.instance.AddItem("coin", 3);
     }
 
     public ItemPrototype GetPrototype(string id)
