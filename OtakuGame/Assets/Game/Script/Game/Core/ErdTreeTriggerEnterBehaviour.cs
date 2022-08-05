@@ -18,6 +18,9 @@ public class ErdTreeTriggerEnterBehaviour : MonoBehaviour
                         gameObject.SetActive(false);
                     break;
 
+                case "SeeTreeFinger":
+                    EldTreeSystem.instance.SeeTreeFinger();
+                    break;
             }
         }
     }

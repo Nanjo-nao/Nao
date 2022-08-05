@@ -7,11 +7,14 @@ public class EldTreeSystem : MonoBehaviour
     public CommonNpcBehaviour melina;
 
     public GameObject ThreeFinger;
+    public GameObject ThreeFingerExtraFire;
     public GameObject ThreeFingerSpawner;
     public Transform melina_pos_1;
     public Transform melina_pos_2;
     public Transform three_pos_1;
     public Transform three_pos_2;
+    public Transform threeFingerTalk_pos_1;
+    public Transform threeFingerTalk_pos_2;
 
     public CameraFollowWithLerp mainCamera;
     public ClickToMove move;
@@ -19,6 +22,8 @@ public class EldTreeSystem : MonoBehaviour
     public ChatPrototype melinaChat;
     public ChatPrototype fingerChat;
     public ChatPrototype burnChat;
+
+    bool _treeFingerTalked;
 
     private void Awake()
     {
@@ -142,5 +147,62 @@ public class EldTreeSystem : MonoBehaviour
     public void BurnTree()
     {
 
+    }
+
+    public void SeeTreeFinger()
+    {
+        if (_treeFingerTalked)
+            return;
+
+        _treeFingerTalked = true;
+
+        var cinematic = CinematicCameraService.instance;
+        cinematic.ResetEvents();
+
+        CinematicEventPrototype e1 = new CinematicEventPrototype();
+        e1.TimeToNext = 0;
+        e1.type = CinematicActionTypes.CallFunc;
+        e1.action = () =>
+        {
+            //InventoryBehaviour.instance.Hide();
+            mainCamera.SetEnable(false);
+            move.ForceStop(true);
+        };
+
+        CinematicEventPrototype e2 = new CinematicEventPrototype();
+        e2.TimeToNext = 2f;
+        e2.trans = threeFingerTalk_pos_1;
+        e2.type = CinematicActionTypes.TweenPositionAndRotation;
+        e2.ease = DG.Tweening.Ease.InOutCubic;
+
+        CinematicEventPrototype e3 = new CinematicEventPrototype();
+        e3.TimeToNext = 0f;
+        e3.type = CinematicActionTypes.CallFunc;
+        e3.action = () =>
+        {
+            ThreeFingerExtraFire.SetActive(true);
+        };
+
+        CinematicEventPrototype e4 = new CinematicEventPrototype();
+        e4.TimeToNext = 4.0f;
+        e4.trans = threeFingerTalk_pos_2;
+        e4.type = CinematicActionTypes.TweenPositionAndRotation;
+        e4.ease = DG.Tweening.Ease.InOutCubic;
+
+        CinematicEventPrototype e5 = new CinematicEventPrototype();
+        e5.TimeToNext = 0f;
+        e5.action = () =>
+        {
+            ChatService.instance.ShowChat(fingerChat);
+        };
+
+        e5.type = CinematicActionTypes.CallFunc;
+
+        cinematic.AddEvents(e1);
+        cinematic.AddEvents(e2);
+        cinematic.AddEvents(e3);
+        cinematic.AddEvents(e5);
+        cinematic.AddEvents(e5);
+        cinematic.StartService();
     }
 }
