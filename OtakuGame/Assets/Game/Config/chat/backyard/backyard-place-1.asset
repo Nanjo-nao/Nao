@@ -16,5 +16,5 @@ MonoBehaviour:
   soundName: backyard-place
   next: {fileID: 0}
   chatSpecialAction: 0
-  speaker: 9
+  speaker: 7
   chatButtonDatas: []
