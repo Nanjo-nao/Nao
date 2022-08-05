@@ -16,7 +16,7 @@ MonoBehaviour:
   soundName: 
   next: {fileID: 0}
   chatSpecialAction: 0
-  speaker: 0
+  speaker: 9
   chatButtonDatas:
   - buttonText: Yes.
     paramChat: {fileID: 11400000, guid: 385f18a0ee16ebd41970442e67f56957, type: 2}
