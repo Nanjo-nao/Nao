@@ -170,7 +170,7 @@ public class EldTreeSystem : MonoBehaviour
         };
 
         CinematicEventPrototype e2 = new CinematicEventPrototype();
-        e2.TimeToNext = 2f;
+        e2.TimeToNext = 3f;
         e2.trans = threeFingerTalk_pos_1;
         e2.type = CinematicActionTypes.TweenPositionAndRotation;
         e2.ease = DG.Tweening.Ease.InOutCubic;
@@ -184,7 +184,7 @@ public class EldTreeSystem : MonoBehaviour
         };
 
         CinematicEventPrototype e4 = new CinematicEventPrototype();
-        e4.TimeToNext = 4.0f;
+        e4.TimeToNext = 3.0f;
         e4.trans = threeFingerTalk_pos_2;
         e4.type = CinematicActionTypes.TweenPositionAndRotation;
         e4.ease = DG.Tweening.Ease.InOutCubic;
