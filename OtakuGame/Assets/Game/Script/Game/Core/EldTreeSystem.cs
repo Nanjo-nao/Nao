@@ -181,6 +181,8 @@ public class EldTreeSystem : MonoBehaviour
         e3.action = () =>
         {
             ThreeFingerExtraFire.SetActive(true);
+            InventoryBehaviour.instance.Show();
+            melina.Unknee();
         };
 
         CinematicEventPrototype e4 = new CinematicEventPrototype();

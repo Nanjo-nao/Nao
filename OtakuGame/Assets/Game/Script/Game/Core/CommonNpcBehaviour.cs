@@ -33,6 +33,11 @@ public class CommonNpcBehaviour : MonoBehaviour
         animator.SetTrigger("knee");
     }
 
+    public void Unknee()
+    {
+        animator.SetTrigger("unknee");
+    }
+
     private void Update()
     {
         if (_isWalking)
