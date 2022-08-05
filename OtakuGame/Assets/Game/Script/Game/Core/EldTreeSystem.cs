@@ -29,7 +29,7 @@ public class EldTreeSystem : MonoBehaviour
     public GameObject burn2;
     bool _treeFingerTalked;
     public GameObject meetAgainTrigger;
-
+    public CanvasGroup cgEnd;
     private void Awake()
     {
         instance = this;
@@ -182,14 +182,14 @@ public class EldTreeSystem : MonoBehaviour
         };
 
         CinematicEventPrototype e4 = new CinematicEventPrototype();
-        e4.TimeToNext = 6.5f;
-        e4.duration = 5.0f;
+        e4.TimeToNext = 4f;
+        e4.duration = 4f;
         e4.trans = tree_pos_2;
         e4.type = CinematicActionTypes.TweenPositionAndRotation;
         e4.ease = DG.Tweening.Ease.InOutCubic;
 
         CinematicEventPrototype e5 = new CinematicEventPrototype();
-        e5.TimeToNext = 2.5f;
+        e5.TimeToNext = 0.25f;
         e5.action = () =>
         {
             RenderSettings.fogColor = new Color(0.9f, 0.77f, 0.6f);
@@ -197,17 +197,16 @@ public class EldTreeSystem : MonoBehaviour
         e5.type = CinematicActionTypes.CallFunc;
 
         CinematicEventPrototype e6 = new CinematicEventPrototype();
-        e6.TimeToNext = 0.0f;
+        e6.TimeToNext = 0.25f;
         e6.type = CinematicActionTypes.CallFunc;
         e6.action = () =>
         {
-            burn2.SetActive(true);
+       
             RenderSettings.fogColor = new Color(0.93f, 0.78f, 0.56f);
         };
 
         CinematicEventPrototype e7 = new CinematicEventPrototype();
-        e7.TimeToNext = 6.5f;
-        e7.duration = 5.0f;
+        e7.TimeToNext = 3f;
         e7.trans = tree_pos_3;
         e7.type = CinematicActionTypes.TweenPositionAndRotation;
         e7.ease = DG.Tweening.Ease.InOutCubic;
@@ -218,7 +217,11 @@ public class EldTreeSystem : MonoBehaviour
         e8.action = () =>
         {
             //burn2.SetActive(true);
+            burn2.SetActive(true);
             RenderSettings.fogColor = new Color(1f, 0.8f, 0.54f);
+            cgEnd.blocksRaycasts = true;
+            cgEnd.interactable = true;
+            cgEnd.DOFade(1, 5).SetEase(Ease.InOutCubic).SetDelay(0.2f);
         };
 
         cinematic.AddEvents(e1);
