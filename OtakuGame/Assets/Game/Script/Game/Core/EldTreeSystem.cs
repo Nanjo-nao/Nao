@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using com;
+using DG.Tweening;
 
 public class EldTreeSystem : MonoBehaviour
 {
@@ -175,7 +176,9 @@ public class EldTreeSystem : MonoBehaviour
         e3.type = CinematicActionTypes.CallFunc;
         e3.action = () =>
         {
-
+            burn1.SetActive(true);
+            RenderSettings.fogColor = new Color(0.88f, 0.74f, 0.62f);
+            //AFB999
         };
 
         CinematicEventPrototype e4 = new CinematicEventPrototype();
@@ -189,7 +192,7 @@ public class EldTreeSystem : MonoBehaviour
         e5.TimeToNext = 2.5f;
         e5.action = () =>
         {
-            burn1.SetActive(true);
+            RenderSettings.fogColor = new Color(0.9f, 0.77f, 0.6f);
         };
         e5.type = CinematicActionTypes.CallFunc;
 
@@ -199,6 +202,7 @@ public class EldTreeSystem : MonoBehaviour
         e6.action = () =>
         {
             burn2.SetActive(true);
+            RenderSettings.fogColor = new Color(0.93f, 0.78f, 0.56f);
         };
 
         CinematicEventPrototype e7 = new CinematicEventPrototype();
@@ -213,7 +217,8 @@ public class EldTreeSystem : MonoBehaviour
         e8.type = CinematicActionTypes.CallFunc;
         e8.action = () =>
         {
-
+            //burn2.SetActive(true);
+            RenderSettings.fogColor = new Color(1f, 0.8f, 0.54f);
         };
 
         cinematic.AddEvents(e1);

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a191403bcc9d718439c9be1ebc931a87, type: 3}
   m_Name: Erdtree-burn-15
   m_EditorClassIdentifier: 
-  content: What shall Game Design bring to this world?
+  content: What shall Game Design bring to this world? Let me think...
   soundName: burn14
   next: {fileID: 0}
   chatSpecialAction: 7
