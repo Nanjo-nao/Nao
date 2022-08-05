@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   content: 'Follow me, my only lord. '
   soundName: burn13
-  next: {fileID: 11400000, guid: 1fcc49e677d7aa54ea59bb889fd44d1a, type: 2}
+  next: {fileID: 0}
   chatSpecialAction: 0
   speaker: 2
-  chatButtonDatas: []
+  chatButtonDatas:
+  - buttonText: Ok
+    paramChat: {fileID: 11400000, guid: 1fcc49e677d7aa54ea59bb889fd44d1a, type: 2}
+    buttonActionType: 2

@@ -15,14 +15,17 @@ public class EldTreeSystem : MonoBehaviour
     public Transform three_pos_2;
     public Transform threeFingerTalk_pos_1;
     public Transform threeFingerTalk_pos_2;
-
+    public Transform tree_pos_1;
+    public Transform tree_pos_2;
+    public Transform tree_pos_3;
     public CameraFollowWithLerp mainCamera;
     public ClickToMove move;
 
     public ChatPrototype melinaChat;
     public ChatPrototype fingerChat;
     public ChatPrototype burnChat;
-
+    public GameObject burn1;
+    public GameObject burn2;
     bool _treeFingerTalked;
     public GameObject meetAgainTrigger;
 
@@ -147,7 +150,81 @@ public class EldTreeSystem : MonoBehaviour
 
     public void BurnTree()
     {
+        Debug.Log("BurnTree");
+        var cinematic = CinematicCameraService.instance;
+        cinematic.ResetEvents();
 
+        CinematicEventPrototype e1 = new CinematicEventPrototype();
+        e1.TimeToNext = 0;
+        e1.type = CinematicActionTypes.CallFunc;
+        e1.action = () =>
+        {
+            //InventoryBehaviour.instance.Hide();
+            mainCamera.SetEnable(false);
+            move.ForceStop(true);
+        };
+
+        CinematicEventPrototype e2 = new CinematicEventPrototype();
+        e2.TimeToNext = 2f;
+        e2.trans = tree_pos_1;
+        e2.type = CinematicActionTypes.TweenPositionAndRotation;
+        e2.ease = DG.Tweening.Ease.InOutCubic;
+
+        CinematicEventPrototype e3 = new CinematicEventPrototype();
+        e3.TimeToNext = 0f;
+        e3.type = CinematicActionTypes.CallFunc;
+        e3.action = () =>
+        {
+
+        };
+
+        CinematicEventPrototype e4 = new CinematicEventPrototype();
+        e4.TimeToNext = 6.5f;
+        e4.duration = 5.0f;
+        e4.trans = tree_pos_2;
+        e4.type = CinematicActionTypes.TweenPositionAndRotation;
+        e4.ease = DG.Tweening.Ease.InOutCubic;
+
+        CinematicEventPrototype e5 = new CinematicEventPrototype();
+        e5.TimeToNext = 2.5f;
+        e5.action = () =>
+        {
+            burn1.SetActive(true);
+        };
+        e5.type = CinematicActionTypes.CallFunc;
+
+        CinematicEventPrototype e6 = new CinematicEventPrototype();
+        e6.TimeToNext = 0.0f;
+        e6.type = CinematicActionTypes.CallFunc;
+        e6.action = () =>
+        {
+            burn2.SetActive(true);
+        };
+
+        CinematicEventPrototype e7 = new CinematicEventPrototype();
+        e7.TimeToNext = 6.5f;
+        e7.duration = 5.0f;
+        e7.trans = tree_pos_3;
+        e7.type = CinematicActionTypes.TweenPositionAndRotation;
+        e7.ease = DG.Tweening.Ease.InOutCubic;
+
+        CinematicEventPrototype e8 = new CinematicEventPrototype();
+        e8.TimeToNext = 0.0f;
+        e8.type = CinematicActionTypes.CallFunc;
+        e8.action = () =>
+        {
+
+        };
+
+        cinematic.AddEvents(e1);
+        cinematic.AddEvents(e2);
+        cinematic.AddEvents(e3);
+        cinematic.AddEvents(e4);
+        cinematic.AddEvents(e5);
+        cinematic.AddEvents(e6);
+        cinematic.AddEvents(e7);
+        cinematic.AddEvents(e8);
+        cinematic.StartService();
     }
 
     public void SeeTreeFinger()
@@ -196,7 +273,6 @@ public class EldTreeSystem : MonoBehaviour
         e5.action = () =>
         {
             InventoryBehaviour.instance.Show();
-
             ChatService.instance.ShowChat(fingerChat);
         };
 
@@ -230,6 +306,7 @@ public class EldTreeSystem : MonoBehaviour
             //InventoryBehaviour.instance.Hide();
             mainCamera.SetEnable(false);
             move.ForceStop(true);
+            InventoryBehaviour.instance.Hide();
         };
 
         CinematicEventPrototype e2 = new CinematicEventPrototype();
