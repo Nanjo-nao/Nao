@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Erdtree-burn-14
   m_EditorClassIdentifier: 
   content: You shall go to the outsider world and study <color=#FFAA55>Game Design</color>...
-  soundName: burn13
+  soundName: burn14
   next: {fileID: 11400000, guid: 09bc5c36fb43d4340b46f6c10912a71d, type: 2}
   chatSpecialAction: 0
   speaker: 2

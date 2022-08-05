@@ -25,10 +25,7 @@ public class CommonNpcBehaviour : MonoBehaviour
         _dest = d;
         _isFalling = true;
         _isFallingSuc = suc;
-        if (!suc)
-        {
-            com.SoundService.instance.Play("grtFall");
-        }
+      
         animator.SetTrigger("jump");
     }
 
@@ -91,6 +88,7 @@ public class CommonNpcBehaviour : MonoBehaviour
         else
         {
             animator.SetTrigger("die");
+            com.SoundService.instance.Play("grtFall");
             PlayPs();
         }
         _isFalling = false;
