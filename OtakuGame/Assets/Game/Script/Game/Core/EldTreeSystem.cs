@@ -77,7 +77,7 @@ public class EldTreeSystem : MonoBehaviour
         cinematic.AddEvents(e1);
         cinematic.AddEvents(e2);
         cinematic.AddEvents(e3);
-        cinematic.AddEvents(e5);
+        cinematic.AddEvents(e4);
         cinematic.AddEvents(e5);
         cinematic.StartService();
     }
@@ -201,7 +201,7 @@ public class EldTreeSystem : MonoBehaviour
         cinematic.AddEvents(e1);
         cinematic.AddEvents(e2);
         cinematic.AddEvents(e3);
-        cinematic.AddEvents(e5);
+        cinematic.AddEvents(e4);
         cinematic.AddEvents(e5);
         cinematic.StartService();
     }
