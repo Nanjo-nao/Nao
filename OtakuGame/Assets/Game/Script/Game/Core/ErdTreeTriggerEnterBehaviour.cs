@@ -21,6 +21,10 @@ public class ErdTreeTriggerEnterBehaviour : MonoBehaviour
                 case "SeeTreeFinger":
                     EldTreeSystem.instance.SeeTreeFinger();
                     break;
+
+                case "MeetAgain":
+                    EldTreeSystem.instance.MeetAgain();
+                    break;
             }
         }
     }

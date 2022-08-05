@@ -15,7 +15,7 @@ MonoBehaviour:
   content: 'Become the Lord of chaos, burn yourself and melt that Erdtree. '
   soundName: 
   next: {fileID: 0}
-  chatSpecialAction: 0
+  chatSpecialAction: 15
   speaker: 8
   chatButtonDatas:
   - buttonText: Give the money
