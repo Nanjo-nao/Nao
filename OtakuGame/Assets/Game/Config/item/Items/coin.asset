@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: coin
   title: Coin
-  sp: {fileID: 21300000, guid: fe09da8d666e60c4fa4cbce0f9e234ce, type: 3}
+  sp: {fileID: 21300000, guid: 229cecbda1ed3d7458ab283cad706d45, type: 3}
   usage: 3
