@@ -15,7 +15,7 @@ MonoBehaviour:
   content: You are leading that girl to be burned? Cruel but I like it
   soundName: 
   next: {fileID: 0}
-  chatSpecialAction: 15
+  chatSpecialAction: 16
   speaker: 8
   chatButtonDatas:
   - buttonText: Yes

@@ -42,6 +42,8 @@ public class ChatPrototype : ScriptableObject
         Move2Jumpers,
         TryStartRace,
         Give1Coin,
+        GiveAllCoin,
+
     }
     public Speaker speaker;
 

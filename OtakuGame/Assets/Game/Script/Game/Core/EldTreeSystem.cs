@@ -180,7 +180,7 @@ public class EldTreeSystem : MonoBehaviour
         e3.type = CinematicActionTypes.CallFunc;
         e3.action = () =>
         {
-            InventoryBehaviour.instance.Show(true);
+            ThreeFingerExtraFire.SetActive(true);
             melina.Unknee();
         };
 
@@ -194,7 +194,8 @@ public class EldTreeSystem : MonoBehaviour
         e5.TimeToNext = 0f;
         e5.action = () =>
         {
-            ThreeFingerExtraFire.SetActive(true);
+            InventoryBehaviour.instance.Show();
+
             ChatService.instance.ShowChat(fingerChat);
         };
 
@@ -206,5 +207,11 @@ public class EldTreeSystem : MonoBehaviour
         cinematic.AddEvents(e4);
         cinematic.AddEvents(e5);
         cinematic.StartService();
+    }
+
+    public void EndFingerChat()
+    {
+        mainCamera.SetEnable(true);
+        move.ForceStop(false);
     }
 }

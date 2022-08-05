@@ -97,6 +97,13 @@ public class ChatService : MonoBehaviour
 
             case ChatPrototype.ChatSpecialAction.Give1Coin:
                 InventoryService.instance.RemoveItem("coin", 1);
+                InventoryBehaviour.instance.SyncItems();
+                break;
+
+            case ChatPrototype.ChatSpecialAction.GiveAllCoin:
+                InventoryService.instance.RemoveItem("coin", 99);
+                InventoryBehaviour.instance.SyncItems();
+                EldTreeSystem.instance.EndFingerChat();
                 break;
         }
     }
