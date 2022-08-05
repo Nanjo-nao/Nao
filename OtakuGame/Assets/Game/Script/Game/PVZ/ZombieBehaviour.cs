@@ -125,6 +125,7 @@ public class ZombieBehaviour : MonoBehaviour
 
     public void Die()
     {
+        com.SoundService.instance.Play("pvzZombieDie");
         //Debug.Log("Die");
         var hit = Instantiate(dieVFX, transform.position, Quaternion.identity, transform.parent);
         hit.SetActive(true);

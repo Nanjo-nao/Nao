@@ -20,3 +20,4 @@ MonoBehaviour:
   snx_r: {fileID: 0}
   threefg_r: {fileID: 21300000, guid: 654e2c6d088c97c4488393bb78340ff4, type: 3}
   hdl_r: {fileID: 21300000, guid: e48021ecaaa96ed46a8966b09c0d73db, type: 3}
+  gds_r: {fileID: 21300000, guid: b114d8446f067ba49896244808feb95f, type: 3}

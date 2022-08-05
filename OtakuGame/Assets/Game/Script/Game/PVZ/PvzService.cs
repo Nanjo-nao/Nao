@@ -115,6 +115,7 @@ public class PvzService : MonoBehaviour
 
     public PlantBehaviour Plant(Transform spot, string id)
     {
+        SoundService.instance.Play("pvzPlant");
         PlantBehaviour res = null;
         if (id == "psht")
         {
@@ -166,7 +167,7 @@ public class PvzService : MonoBehaviour
     {
         foreach (var i in zombies)
         {
-            if (i!=null)
+            if (i != null)
             {
                 Destroy(i.gameObject);
             }
@@ -179,7 +180,7 @@ public class PvzService : MonoBehaviour
     {
         foreach (var i in plants)
         {
-            if (i!=null)
+            if (i != null)
             {
                 Destroy(i.gameObject);
             }
@@ -193,6 +194,7 @@ public class PvzService : MonoBehaviour
         //OnZombieEnters
         move.characterAnimation.Unhappy();
         ChatService.instance.ShowChat(chatLoose);
+        SoundService.instance.Play("pvzFail");
     }
 
     public void Win()
@@ -200,6 +202,7 @@ public class PvzService : MonoBehaviour
         Debug.Log("win");
         ChatService.instance.ShowChat(chatWin);
         block.SetActive(false);
+        SoundService.instance.Play("pvzWin");
     }
 
     public void ExitPvzView()
@@ -224,6 +227,7 @@ public class PvzService : MonoBehaviour
             mainCamera.SetEnable(false);
             move.ForceStop(true);
             move.characterAnimation.Happy();
+            SoundService.instance.Play("plantSpeak1");
         };
 
         CinematicEventPrototype e2 = new CinematicEventPrototype();
@@ -262,6 +266,7 @@ public class PvzService : MonoBehaviour
             InventoryBehaviour.instance.Show();
             PreparePvzArena();
             ChatService.instance.ShowChat(chatStart);
+            SoundService.instance.Play("plantSpeak2");
         };
 
         cinematic.AddEvents(e1);

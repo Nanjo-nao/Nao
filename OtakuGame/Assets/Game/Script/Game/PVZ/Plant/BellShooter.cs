@@ -19,6 +19,7 @@ public class BellShooter : MonoBehaviour
 
     public void Fire()
     {
+        com.SoundService.instance.Play("shootBullet");
         var bulletGo = Instantiate(bullet, muzzle.position, muzzle.rotation, transform.parent);
         bulletGo.SetActive(true);
     }

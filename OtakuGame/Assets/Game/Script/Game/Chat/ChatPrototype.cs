@@ -20,6 +20,7 @@ public class ChatPrototype : ScriptableObject
         ZZQ,
         HDL,
         ThreeFinger,
+        Goddess,
     }
 
     public ChatSpecialAction chatSpecialAction;
@@ -98,6 +99,9 @@ public class ChatPrototype : ScriptableObject
 
                 case Speaker.ThreeFinger:
                     return cfg.threefg_r;
+
+                case Speaker.Goddess:
+                    return cfg.gds_r;
             }
             return null;
         }

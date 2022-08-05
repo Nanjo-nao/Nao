@@ -110,6 +110,7 @@ public class ClickToMove : MonoBehaviour
                 destination.transform.position = hit.point;
                 destinationPs.Play();
                 GoToDestination();
+                com.SoundService.instance.Play("moveClk");
             }
         }
     }
