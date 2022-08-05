@@ -75,14 +75,21 @@ public class InventoryBehaviour : MonoBehaviour
         cg.interactable = false;
     }
 
-    public void Show()
+    public void Show(bool instant = false)
     {
         Debug.Log("--Show");
         SyncItems();
 
         cg.DOKill();
-        cg.DOFade(1, 0.6f);
-        //cg.alpha = 1;
+        if (instant)
+        {
+            cg.alpha = 1;
+        }
+        else
+        {
+            cg.DOFade(1, 0.6f);
+        }
+
         cg.blocksRaycasts = true;
         cg.interactable = true;
     }

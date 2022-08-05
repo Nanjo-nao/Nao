@@ -112,14 +112,14 @@ public class EldTreeSystem : MonoBehaviour
         };
 
         CinematicEventPrototype e4 = new CinematicEventPrototype();
-        e4.TimeToNext = 7.0f;
+        e4.TimeToNext = 6.5f;
         e4.duration = 5.0f;
         e4.trans = three_pos_2;
         e4.type = CinematicActionTypes.TweenPositionAndRotation;
         e4.ease = DG.Tweening.Ease.InOutCubic;
 
         CinematicEventPrototype e5 = new CinematicEventPrototype();
-        e5.TimeToNext = 2.2f;
+        e5.TimeToNext = 2.5f;
         e5.action = () =>
         {
             ThreeFinger.SetActive(true);
@@ -170,7 +170,7 @@ public class EldTreeSystem : MonoBehaviour
         };
 
         CinematicEventPrototype e2 = new CinematicEventPrototype();
-        e2.TimeToNext = 3f;
+        e2.TimeToNext = 3.0f;
         e2.trans = threeFingerTalk_pos_1;
         e2.type = CinematicActionTypes.TweenPositionAndRotation;
         e2.ease = DG.Tweening.Ease.InOutCubic;
@@ -180,13 +180,12 @@ public class EldTreeSystem : MonoBehaviour
         e3.type = CinematicActionTypes.CallFunc;
         e3.action = () =>
         {
-            ThreeFingerExtraFire.SetActive(true);
-            InventoryBehaviour.instance.Show();
+            InventoryBehaviour.instance.Show(true);
             melina.Unknee();
         };
 
         CinematicEventPrototype e4 = new CinematicEventPrototype();
-        e4.TimeToNext = 3.0f;
+        e4.TimeToNext = 2.0f;
         e4.trans = threeFingerTalk_pos_2;
         e4.type = CinematicActionTypes.TweenPositionAndRotation;
         e4.ease = DG.Tweening.Ease.InOutCubic;
@@ -195,6 +194,7 @@ public class EldTreeSystem : MonoBehaviour
         e5.TimeToNext = 0f;
         e5.action = () =>
         {
+            ThreeFingerExtraFire.SetActive(true);
             ChatService.instance.ShowChat(fingerChat);
         };
 
