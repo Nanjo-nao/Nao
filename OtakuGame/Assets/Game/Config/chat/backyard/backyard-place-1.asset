@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: backyard-place-1
   m_EditorClassIdentifier: 
   content: 'Click a plant, and then click on the ground tile to place it. '
-  soundName: backyard-place
+  soundName: backyard-win
   next: {fileID: 0}
   chatSpecialAction: 0
   speaker: 7
