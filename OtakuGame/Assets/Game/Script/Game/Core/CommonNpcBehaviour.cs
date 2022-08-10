@@ -63,7 +63,7 @@ public class CommonNpcBehaviour : MonoBehaviour
             dir.x = 0;
             dir.z = 0;
 
-            if (!_fallFailSoundPlayed && dir.magnitude < 1.4f && !_isFallingSuc)
+            if (!_fallFailSoundPlayed && dir.magnitude < 2.0f && !_isFallingSuc)
             {
                 _fallFailSoundPlayed = true;
                 com.SoundService.instance.Play("grtFall");
