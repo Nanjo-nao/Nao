@@ -195,7 +195,7 @@ public class EldTreeSystem : MonoBehaviour
         e5.TimeToNext = 0.25f;
         e5.action = () =>
         {
-            RenderSettings.fogColor = new Color(0.9f, 0.77f, 0.6f);
+            RenderSettings.fogColor = new Color(0.92f, 0.78f, 0.6f);
         };
         e5.type = CinematicActionTypes.CallFunc;
 
@@ -205,7 +205,7 @@ public class EldTreeSystem : MonoBehaviour
         e6.action = () =>
         {
        
-            RenderSettings.fogColor = new Color(0.95f, 0.78f, 0.56f);
+            RenderSettings.fogColor = new Color(0.97f, 0.7f, 0.5f);
         };
 
         CinematicEventPrototype e7 = new CinematicEventPrototype();
@@ -221,7 +221,7 @@ public class EldTreeSystem : MonoBehaviour
         {
             //burn2.SetActive(true);
             burn2.SetActive(true);
-            RenderSettings.fogColor = new Color(1f, 0.79f, 0.55f);
+            RenderSettings.fogColor = new Color(1f, 0.5f, 0.4f);
             cgEnd.blocksRaycasts = true;
             cgEnd.interactable = true;
             cgEnd.DOFade(1, 5).SetEase(Ease.InOutCubic).SetDelay(3f);

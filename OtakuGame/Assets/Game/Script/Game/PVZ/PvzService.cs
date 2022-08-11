@@ -227,7 +227,7 @@ public class PvzService : MonoBehaviour
             mainCamera.SetEnable(false);
             move.ForceStop(true);
             move.characterAnimation.Happy();
-            SoundService.instance.Play("plantSpeak1");
+            //SoundService.instance.Play("plantSpeak1");
         };
 
         CinematicEventPrototype e2 = new CinematicEventPrototype();
@@ -266,7 +266,7 @@ public class PvzService : MonoBehaviour
             InventoryBehaviour.instance.Show();
             PreparePvzArena();
             ChatService.instance.ShowChat(chatStart);
-            SoundService.instance.Play("plantSpeak2");
+            //SoundService.instance.Play("plantSpeak2");
         };
 
         cinematic.AddEvents(e1);

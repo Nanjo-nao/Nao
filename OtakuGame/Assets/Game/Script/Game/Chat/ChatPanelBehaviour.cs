@@ -172,8 +172,8 @@ public class ChatPanelBehaviour : MonoBehaviour
     void ClickBtnFeedback()
     {
         ChatService.instance.OnChatEnd();
-        SoundService.instance.Play("btn");
-        Debug.Log("OnClickBtn!!");
+        SoundService.instance.Play("any");
+        //Debug.Log("OnClickBtn!!");
     }
 
     public void OnClickBtn1()

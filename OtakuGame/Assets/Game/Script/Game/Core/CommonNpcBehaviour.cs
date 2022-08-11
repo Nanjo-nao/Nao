@@ -11,7 +11,7 @@ public class CommonNpcBehaviour : MonoBehaviour
     bool _isFalling;
     bool _isFallingSuc;
     public ParticleSystem ps;
-
+    bool _fallFailSoundPlayed;
     public void GoTo(Vector3 d)
     {
         animator.SetBool("walk", true);
@@ -25,7 +25,8 @@ public class CommonNpcBehaviour : MonoBehaviour
         _dest = d;
         _isFalling = true;
         _isFallingSuc = suc;
-      
+        _fallFailSoundPlayed = false;
+
         animator.SetTrigger("jump");
     }
 
@@ -61,6 +62,13 @@ public class CommonNpcBehaviour : MonoBehaviour
             var dir = _dest - transform.position;
             dir.x = 0;
             dir.z = 0;
+
+            if (!_fallFailSoundPlayed && dir.magnitude < 2.0f && !_isFallingSuc)
+            {
+                _fallFailSoundPlayed = true;
+                com.SoundService.instance.Play("grtFall");
+            }
+
             if (dir.magnitude < 0.05f)
             {
                 ArriveFall();
@@ -88,7 +96,6 @@ public class CommonNpcBehaviour : MonoBehaviour
         else
         {
             animator.SetTrigger("die");
-            com.SoundService.instance.Play("grtFall");
             PlayPs();
         }
         _isFalling = false;
