@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: peanut shooter
   m_EditorClassIdentifier: 
   id: psht
-  title: psht
+  title: Peanut
   sp: {fileID: 21300000, guid: 173a3f305a47a344eaa548782332403e, type: 3}
   usage: 1
